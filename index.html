@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>emprise -- A bold undertaking</title>
+  <meta name="description" content="Cross-platform AI CLI assistant. Connect to your own LLMs.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='35' r='6' fill='%2358d1c9'/><line x1='50' y1='41' x2='50' y2='55' stroke='%2358d1c9' stroke-width='3'/><path d='M25 55 Q50 35 75 55' stroke='%2358d1c9' stroke-width='6' fill='none' stroke-linecap='round'/><line x1='50' y1='55' x2='50' y2='80' stroke='%2358d1c9' stroke-width='4'/><rect x='35' y='78' width='30' height='8' rx='3' fill='%233ba8a0'/></svg>">
+</head>
+<body>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 512 512">
+          <defs>
+            <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0d1117"/>
+              <stop offset="100%" stop-color="#161b22"/>
+            </linearGradient>
+            <linearGradient id="dish" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#79ddd6"/>
+              <stop offset="100%" stop-color="#3ba8a0"/>
+            </linearGradient>
+            <linearGradient id="glow" x1="0.5" y1="0" x2="0.5" y2="1">
+              <stop offset="0%" stop-color="#58d1c9" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#58d1c9" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <rect width="512" height="512" rx="80" fill="url(#bg)"/>
+          <circle cx="80" cy="60" r="2" fill="#c9d1d9" opacity="0.5"/>
+          <circle cx="420" cy="90" r="1.5" fill="#c9d1d9" opacity="0.4"/>
+          <circle cx="150" cy="120" r="1" fill="#c9d1d9" opacity="0.3"/>
+          <circle cx="380" cy="50" r="2" fill="#c9d1d9" opacity="0.6"/>
+          <circle cx="300" cy="80" r="1.5" fill="#c9d1d9" opacity="0.3"/>
+          <circle cx="440" cy="160" r="1" fill="#c9d1d9" opacity="0.4"/>
+          <circle cx="70" cy="180" r="1.5" fill="#c9d1d9" opacity="0.3"/>
+          <path d="M256 180 L220 60 L292 60 Z" fill="url(#glow)"/>
+          <path d="M130 260 Q256 160 382 260" stroke="url(#dish)" stroke-width="16" fill="none" stroke-linecap="round"/>
+          <line x1="256" y1="180" x2="256" y2="260" stroke="#58d1c9" stroke-width="6"/>
+          <circle cx="256" cy="175" r="8" fill="#58d1c9"/>
+          <circle cx="256" cy="175" r="14" fill="none" stroke="#58d1c9" stroke-width="2" opacity="0.4"/>
+          <line x1="256" y1="260" x2="256" y2="380" stroke="#58d1c9" stroke-width="8" stroke-linecap="round"/>
+          <rect x="196" y="370" width="120" height="20" rx="6" fill="#3ba8a0"/>
+        </svg>
+      </div>
+      <h1>emprise</h1>
+      <p class="tagline">A bold undertaking</p>
+      <p class="subtitle">Cross-platform AI CLI assistant. Connect to your own LLMs.</p>
+      <a href="#download" class="btn">Download</a>
+    </div>
+  </section>
+
+  <!-- ============ TERMINAL DEMO ============ -->
+  <section class="terminal-section">
+    <div class="container">
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="terminal-dot r"></span>
+          <span class="terminal-dot y"></span>
+          <span class="terminal-dot g"></span>
+        </div>
+        <div class="terminal-body"><span class="prompt">&gt;</span> what's using all my CPU?
+
+<span class="tool">* Bash(ps aux --sort=-%cpu | head -5)</span>
+  <span class="muted">|- USER  PID  %CPU  COMMAND</span>
+  <span class="muted">|- steve 1234 82.3  chrome</span>
+
+<span class="tool">* Chrome is consuming 82% CPU across 8 processes.</span>
+  Close unused tabs to free resources.
+
+<span class="ship">* Voyaged for 1.2s</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section id="features">
+    <div class="container">
+      <h2 class="section-title">Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>43+ Built-in Tools</h3>
+          <p>System info, file operations, git workflows, shell execution, web requests, Docker management, and SSH -- all available out of the box.</p>
+        </div>
+        <div class="feature-card">
+          <h3>4 LLM Backends</h3>
+          <p>Ollama for local models, GitHub Models, OpenAI, and Anthropic. Switch providers with a single flag or set a default.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Named Conversations</h3>
+          <p>Save conversations by name, resume them later, list and search your history. Pick up right where you left off.</p>
+        </div>
+        <div class="feature-card">
+          <h3>10-Layer Safety System</h3>
+          <p>Confirmation prompts, path sandboxing, command allow/deny lists, Docker isolation, and more. Every destructive action requires approval.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Plugins + MCP Client</h3>
+          <p>Extend emprise with custom tool plugins or connect to any Model Context Protocol server for additional capabilities.</p>
+        </div>
+        <div class="feature-card">
+          <h3>macOS Signed + Notarized</h3>
+          <p>Properly signed and notarized for macOS. No Gatekeeper warnings. Native Apple Silicon binary for maximum performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOWNLOAD ============ -->
+  <section id="download">
+    <div class="container">
+      <h2 class="section-title">Download</h2>
+      <div class="download-table-wrap">
+        <table class="download-table">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Format</th>
+              <th>Notes</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>macOS</td>
+              <td>DMG</td>
+              <td>Apple Silicon, signed and notarized</td>
+              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-macos.dmg" class="btn" style="padding:8px 20px;font-size:0.9rem;">Download</a></td>
+            </tr>
+            <tr>
+              <td>Linux</td>
+              <td>Binary</td>
+              <td>x86_64 static binary</td>
+              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-linux" class="btn" style="padding:8px 20px;font-size:0.9rem;">Download</a></td>
+            </tr>
+            <tr>
+              <td>Windows</td>
+              <td>EXE</td>
+              <td>Portable executable</td>
+              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-windows.exe" class="btn" style="padding:8px 20px;font-size:0.9rem;">Download</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="install-cmd">
+        curl -fsSL https://emprise.dev/install.sh | sh
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMMANDS ============ -->
+  <section id="commands">
+    <div class="container">
+      <h2 class="section-title">Commands</h2>
+      <div class="commands-grid">
+        <div class="commands-col">
+          <h3>Slash Commands</h3>
+          <ul>
+            <li><code>/help</code> -- show all commands</li>
+            <li><code>/model</code> -- switch LLM backend</li>
+            <li><code>/save &lt;name&gt;</code> -- save conversation</li>
+            <li><code>/resume &lt;name&gt;</code> -- resume conversation</li>
+            <li><code>/list</code> -- list saved conversations</li>
+            <li><code>/forget</code> -- clear conversation history</li>
+            <li><code>/system &lt;msg&gt;</code> -- set system prompt</li>
+            <li><code>/plugin &lt;path&gt;</code> -- load a plugin</li>
+            <li><code>/mcp &lt;url&gt;</code> -- connect MCP server</li>
+            <li><code>/cost</code> -- show token usage and cost</li>
+            <li><code>/quit</code> -- exit emprise</li>
+          </ul>
+        </div>
+        <div class="commands-col">
+          <h3>CLI Flags</h3>
+          <ul>
+            <li><code>-m, --model</code> -- select model</li>
+            <li><code>-p, --provider</code> -- LLM provider</li>
+            <li><code>-r, --resume</code> -- resume conversation</li>
+            <li><code>-s, --system</code> -- system prompt</li>
+            <li><code>-y, --yes</code> -- auto-approve tools</li>
+            <li><code>--no-tools</code> -- disable all tools</li>
+            <li><code>--safe</code> -- read-only mode</li>
+            <li><code>--docker</code> -- run in container</li>
+            <li><code>--verbose</code> -- debug output</li>
+            <li><code>--version</code> -- print version</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <p>Built by <a href="https://senzall.com">Senzall</a> | <a href="https://senzall.dev">senzall.dev</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+/* emprise.dev — dark theme, teal accent */
+:root {
+  --bg: #0d1117;
+  --bg-card: #161b22;
+  --border: #21262d;
+  --text: #c9d1d9;
+  --text-muted: #8b949e;
+  --teal: #58d1c9;
+  --teal-dim: rgba(88, 209, 201, 0.15);
+  --green: #3fb950;
+  --radius: 8px;
+  --max-w: 1080px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--teal); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- layout ---- */
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+section { padding: 80px 0; }
+
+/* ---- hero ---- */
+.hero {
+  text-align: center;
+  padding: 100px 0 80px;
+}
+
+.hero-icon {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 32px;
+}
+
+.hero h1 {
+  font-size: 3.6rem;
+  font-weight: 800;
+  color: var(--teal);
+  letter-spacing: -1px;
+  margin-bottom: 4px;
+}
+
+.hero .tagline {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.hero .subtitle {
+  font-size: 1.15rem;
+  color: var(--text);
+  margin-bottom: 36px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background: var(--teal);
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 1.05rem;
+  border-radius: var(--radius);
+  transition: opacity 0.2s;
+}
+.btn:hover { opacity: 0.85; text-decoration: none; }
+
+/* ---- terminal demo ---- */
+.terminal-section { padding-bottom: 40px; }
+
+.terminal {
+  max-width: 680px;
+  margin: 0 auto;
+  background: #010409;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px;
+  background: #161b22;
+  border-bottom: 1px solid var(--border);
+}
+
+.terminal-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+}
+.terminal-dot.r { background: #ff5f57; }
+.terminal-dot.y { background: #febc2e; }
+.terminal-dot.g { background: #28c840; }
+
+.terminal-body { padding: 16px 20px; white-space: pre-wrap; color: var(--text); }
+.terminal-body .prompt { color: var(--green); }
+.terminal-body .tool { color: var(--teal); }
+.terminal-body .muted { color: var(--text-muted); }
+.terminal-body .ship { color: var(--green); }
+
+/* ---- section headings ---- */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 48px;
+  color: #f0f6fc;
+}
+
+/* ---- features grid ---- */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+}
+
+.feature-card h3 {
+  font-size: 1.05rem;
+  color: var(--teal);
+  margin-bottom: 8px;
+}
+
+.feature-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* ---- download table ---- */
+.download-table-wrap { overflow-x: auto; }
+
+.download-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 32px;
+}
+
+.download-table th,
+.download-table td {
+  text-align: left;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.download-table th {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.download-table td { font-size: 0.95rem; }
+
+.install-cmd {
+  max-width: 680px;
+  margin: 0 auto;
+  background: #010409;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+  color: var(--teal);
+  text-align: center;
+  word-break: break-all;
+}
+
+/* ---- commands ---- */
+.commands-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.commands-col h3 {
+  font-size: 1.1rem;
+  color: var(--teal);
+  margin-bottom: 16px;
+}
+
+.commands-col ul {
+  list-style: none;
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.88rem;
+  line-height: 2;
+  color: var(--text-muted);
+}
+
+.commands-col code {
+  color: var(--text);
+}
+
+/* ---- footer ---- */
+footer {
+  text-align: center;
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+footer a { color: var(--teal); }
+
+/* ---- responsive ---- */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.4rem; }
+  .features-grid { grid-template-columns: 1fr; }
+  .commands-grid { grid-template-columns: 1fr; }
+  section { padding: 56px 0; }
+  .hero { padding: 64px 0 48px; }
+}
+
+@media (max-width: 480px) {
+  .hero-icon { width: 120px; height: 120px; }
+  .hero h1 { font-size: 2rem; }
+  .terminal { font-size: 0.78rem; }
+}
