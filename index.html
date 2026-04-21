@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>emprise -- A bold undertaking</title>
-  <meta name="description" content="Cross-platform AI CLI assistant. Connect to your own LLMs.">
+  <title>emprise -- AI CLI assistant</title>
+  <meta name="description" content="Cross-platform AI CLI assistant. Connect to Ollama, OpenAI, Anthropic, or GitHub Models. 43+ tools, interactive menus, developer environment audit.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='35' r='6' fill='%2358d1c9'/><line x1='50' y1='41' x2='50' y2='55' stroke='%2358d1c9' stroke-width='3'/><path d='M25 55 Q50 35 75 55' stroke='%2358d1c9' stroke-width='6' fill='none' stroke-linecap='round'/><line x1='50' y1='55' x2='50' y2='80' stroke='%2358d1c9' stroke-width='4'/><rect x='35' y='78' width='30' height='8' rx='3' fill='%233ba8a0'/></svg>">
 </head>
@@ -34,9 +34,6 @@
           <circle cx="420" cy="90" r="1.5" fill="#c9d1d9" opacity="0.4"/>
           <circle cx="150" cy="120" r="1" fill="#c9d1d9" opacity="0.3"/>
           <circle cx="380" cy="50" r="2" fill="#c9d1d9" opacity="0.6"/>
-          <circle cx="300" cy="80" r="1.5" fill="#c9d1d9" opacity="0.3"/>
-          <circle cx="440" cy="160" r="1" fill="#c9d1d9" opacity="0.4"/>
-          <circle cx="70" cy="180" r="1.5" fill="#c9d1d9" opacity="0.3"/>
           <path d="M256 180 L220 60 L292 60 Z" fill="url(#glow)"/>
           <path d="M130 260 Q256 160 382 260" stroke="url(#dish)" stroke-width="16" fill="none" stroke-linecap="round"/>
           <line x1="256" y1="180" x2="256" y2="260" stroke="#58d1c9" stroke-width="6"/>
@@ -48,12 +45,13 @@
       </div>
       <h1>emprise</h1>
       <p class="tagline">A bold undertaking</p>
-      <p class="subtitle">Cross-platform AI CLI assistant. Connect to your own LLMs.</p>
+      <p class="subtitle">AI-powered CLI assistant with 43+ tools, interactive menus, and developer environment management.</p>
       <a href="#download" class="btn">Download</a>
+      <a href="#commands" class="btn btn-outline">Commands</a>
     </div>
   </section>
 
-  <!-- ============ TERMINAL DEMO ============ -->
+  <!-- ============ TERMINAL: CHAT ============ -->
   <section class="terminal-section">
     <div class="container">
       <div class="terminal">
@@ -61,17 +59,28 @@
           <span class="terminal-dot r"></span>
           <span class="terminal-dot y"></span>
           <span class="terminal-dot g"></span>
+          <span class="terminal-title">emprise</span>
         </div>
-        <div class="terminal-body"><span class="prompt">&gt;</span> what's using all my CPU?
+        <div class="terminal-body">
+<span class="brand">  emprise</span> <span class="muted">- openai (gpt-4o)</span>
+<span class="muted">  /Users/steve/project</span>
 
-<span class="tool">* Bash(ps aux --sort=-%cpu | head -5)</span>
-  <span class="muted">|- USER  PID  %CPU  COMMAND</span>
-  <span class="muted">|- steve 1234 82.3  chrome</span>
+<span class="prompt">  > </span>what's using all my CPU?
 
-<span class="tool">* Chrome is consuming 82% CPU across 8 processes.</span>
-  Close unused tabs to free resources.
+<span class="tool">  * get_cpu({})</span>
+<span class="muted">    | Apple M4 Pro</span>
+<span class="muted">    | Cores: 12</span>
+<span class="muted">    | Load: { 3.91 4.40 4.26 }</span>
 
-<span class="ship">* Voyaged for 1.2s</span></div>
+<span class="tool">  * get_processes({})</span>
+<span class="muted">    | PID 1234  82.3%  chrome</span>
+<span class="muted">    | PID 5678  41.4%  WindowServer</span>
+
+<span class="response">  *</span> Chrome is consuming 82% CPU across 8 processes.
+     Close unused tabs or restart Chrome to free resources.
+
+<span class="ship">  ~ 1.2s - 847 tokens</span>
+</div>
       </div>
     </div>
   </section>
@@ -82,28 +91,120 @@
       <h2 class="section-title">Features</h2>
       <div class="features-grid">
         <div class="feature-card">
+          <h3>Interactive Menus</h3>
+          <p>Every command uses arrow-key navigation. Browse profiles, tools, models, history, and settings with a consistent picker UX.</p>
+        </div>
+        <div class="feature-card">
           <h3>43+ Built-in Tools</h3>
-          <p>System info, file operations, git workflows, shell execution, web requests, Docker status, and SSH -- all available out of the box.</p>
+          <p>System info, file operations, git workflows, shell execution, web requests, Docker, SSH, clipboard, and more. Categorized and toggleable.</p>
         </div>
         <div class="feature-card">
-          <h3>4 LLM Backends</h3>
-          <p>Ollama for local models, GitHub Models, OpenAI, and Anthropic. Switch providers with a single flag or set a default.</p>
+          <h3>4 LLM Providers</h3>
+          <p>Ollama (local, free), GitHub Models (free with Copilot), OpenAI (GPT-4o), and Anthropic (Claude). Switch instantly with /profile.</p>
         </div>
         <div class="feature-card">
-          <h3>Named Conversations</h3>
-          <p>Save conversations by name, resume them later, list and search your history. Pick up right where you left off.</p>
+          <h3>Developer Environment</h3>
+          <p>/dev audits your setup across 12 categories: languages, AI tools, editors, cloud CLIs, containers, databases, and more. One-click installs.</p>
         </div>
         <div class="feature-card">
-          <h3>10-Layer Safety System</h3>
-          <p>Confirmation prompts, path sandboxing, command allow/deny lists, and more. Every destructive action requires approval.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Plugins + MCP Client</h3>
-          <p>Extend emprise with custom tool plugins or connect to any Model Context Protocol server for additional capabilities.</p>
+          <h3>Streaming + Markdown</h3>
+          <p>Responses stream in real-time with glamour markdown rendering. Shell commands show output line-by-line as they run.</p>
         </div>
         <div class="feature-card">
           <h3>macOS Signed + Notarized</h3>
-          <p>Properly signed and notarized for macOS. No Gatekeeper warnings. Native Apple Silicon binary for maximum performance.</p>
+          <p>Native Apple Silicon DMG with drag-to-install. Self-updates via emprise update. Also available for Linux and Windows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TERMINAL: PROFILE ============ -->
+  <section class="terminal-section">
+    <div class="container">
+      <h2 class="section-title">Interactive Everything</h2>
+      <div class="terminals-row">
+        <div class="terminal terminal-sm">
+          <div class="terminal-bar">
+            <span class="terminal-dot r"></span>
+            <span class="terminal-dot y"></span>
+            <span class="terminal-dot g"></span>
+            <span class="terminal-title">/profile</span>
+          </div>
+          <div class="terminal-body">
+<span class="muted">  Switch Profile</span>
+
+<span class="cursor">  > </span><span class="brand">local</span>  <span class="green">(active)</span>  <span class="muted">ollama - llama3.2:3b</span>
+<span class="muted">    github             openai - gpt-4o</span>
+<span class="muted">    claude             anthropic - claude-sonnet-4</span>
+<span class="muted">    Edit profiles...</span>
+<span class="muted">    &lt;- Back</span>
+</div>
+        </div>
+        <div class="terminal terminal-sm">
+          <div class="terminal-bar">
+            <span class="terminal-dot r"></span>
+            <span class="terminal-dot y"></span>
+            <span class="terminal-dot g"></span>
+            <span class="terminal-title">/tools</span>
+          </div>
+          <div class="terminal-body">
+<span class="muted">  Tools</span>
+
+<span class="cursor">  > </span><span class="tool">System</span>          <span class="green">all on</span>
+<span class="muted">    Files           8/8 enabled</span>
+<span class="muted">    Git             7/7 enabled</span>
+<span class="muted">    Shell           all on</span>
+<span class="muted">    Web             2/2 enabled</span>
+<span class="muted">    Docker          all off</span>
+<span class="muted">    &lt;- Back</span>
+</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TERMINAL: DEV ============ -->
+  <section class="terminal-section">
+    <div class="container">
+      <div class="terminals-row">
+        <div class="terminal terminal-sm">
+          <div class="terminal-bar">
+            <span class="terminal-dot r"></span>
+            <span class="terminal-dot y"></span>
+            <span class="terminal-dot g"></span>
+            <span class="terminal-title">/dev</span>
+          </div>
+          <div class="terminal-body">
+<span class="muted">  Developer Environment</span>
+
+<span class="cursor">  > </span><span class="tool">Core</span>              <span class="muted">3 tools</span>
+<span class="muted">    Languages         6 tools</span>
+<span class="muted">    AI Tools          4 tools</span>
+<span class="muted">    Editors           3 tools</span>
+<span class="muted">    Cloud             6 tools</span>
+<span class="muted">    Containers        2 tools</span>
+<span class="muted">    Dev Tools         9 tools</span>
+<span class="muted">    &lt;- Back</span>
+</div>
+        </div>
+        <div class="terminal terminal-sm">
+          <div class="terminal-bar">
+            <span class="terminal-dot r"></span>
+            <span class="terminal-dot y"></span>
+            <span class="terminal-dot g"></span>
+            <span class="terminal-title">/dev > Languages</span>
+          </div>
+          <div class="terminal-body">
+<span class="muted">  Developer Environment > Languages</span>
+
+<span class="green">  &#10003;</span>  nvm <span class="yellow">&#9733;</span>           <span class="muted">~/.nvm</span>
+<span class="green">  &#10003;</span>  Node.js <span class="yellow">&#9733;</span>       <span class="muted">v22.1.0</span>
+<span class="green">  &#10003;</span>  Go <span class="yellow">&#9733;</span>            <span class="muted">go1.23.0</span>
+<span class="red">  &#10007;</span>  Rust            <span class="muted">not found</span>  <span class="yellow">curl ... | sh</span>
+<span class="green">  &#10003;</span>  Python <span class="yellow">&#9733;</span>        <span class="muted">3.12.0</span>
+<span class="cursor">  > </span><span class="red">&#10007;</span>  Java            <span class="muted">not found</span>  <span class="yellow">brew install openjdk</span>
+<span class="muted">    &lt;- Back</span>
+</div>
         </div>
       </div>
     </div>
@@ -128,26 +229,27 @@
               <td>macOS</td>
               <td>DMG</td>
               <td>Apple Silicon, signed and notarized</td>
-              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-macos.dmg" class="btn" style="padding:8px 20px;font-size:0.9rem;">Download</a></td>
+              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-macos.dmg" class="btn btn-sm">Download</a></td>
             </tr>
             <tr>
               <td>Linux</td>
               <td>Binary</td>
               <td>x86_64 static binary</td>
-              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-linux" class="btn" style="padding:8px 20px;font-size:0.9rem;">Download</a></td>
+              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-linux-amd64" class="btn btn-sm">Download</a></td>
             </tr>
             <tr>
               <td>Windows</td>
               <td>EXE</td>
               <td>Portable executable</td>
-              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-windows.exe" class="btn" style="padding:8px 20px;font-size:0.9rem;">Download</a></td>
+              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-windows-amd64.exe" class="btn btn-sm">Download</a></td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="install-cmd">
-        curl -fsSL https://emprise.dev/install.sh | sh
+        <span class="muted">$</span> curl -fsSL https://raw.githubusercontent.com/senzalldev/emprise-app/main/install.sh | sh
       </div>
+      <p class="install-note">Or update an existing install: <code>emprise update</code></p>
     </div>
   </section>
 
@@ -155,36 +257,121 @@
   <section id="commands">
     <div class="container">
       <h2 class="section-title">Commands</h2>
+
       <div class="commands-grid">
         <div class="commands-col">
-          <h3>Slash Commands</h3>
+          <h3>Chat</h3>
           <ul>
-            <li><code>/help</code> -- show all commands</li>
-            <li><code>/model</code> -- switch LLM backend</li>
-            <li><code>/save &lt;name&gt;</code> -- save conversation</li>
-            <li><code>/resume &lt;name&gt;</code> -- resume conversation</li>
-            <li><code>/list</code> -- list saved conversations</li>
-            <li><code>/forget</code> -- clear conversation history</li>
-            <li><code>/system &lt;msg&gt;</code> -- set system prompt</li>
-            <li><code>/plugin &lt;path&gt;</code> -- load a plugin</li>
-            <li><code>/mcp &lt;url&gt;</code> -- connect MCP server</li>
-            <li><code>/cost</code> -- show token usage and cost</li>
-            <li><code>/quit</code> -- exit emprise</li>
+            <li><code>/clear</code> reset conversation</li>
+            <li><code>/cls</code> clear screen</li>
+            <li><code>/name</code> name conversation</li>
+            <li><code>/save</code> save conversation</li>
+            <li><code>/history</code> browse past conversations</li>
+            <li><code>/copy</code> copy last response to clipboard</li>
+            <li><code>/export</code> export as markdown</li>
+          </ul>
+        </div>
+        <div class="commands-col">
+          <h3>LLM</h3>
+          <ul>
+            <li><code>/model</code> switch model (picker or <code>/model gpt-4o</code>)</li>
+            <li><code>/profile</code> switch LLM profile</li>
+            <li><code>/config</code> settings menu</li>
+            <li><code>/tools</code> manage tools by category</li>
+            <li><code>/stats</code> usage heat map per model</li>
+            <li><code>/setup</code> add a new LLM provider</li>
+          </ul>
+        </div>
+        <div class="commands-col">
+          <h3>Developer</h3>
+          <ul>
+            <li><code>/dev</code> environment audit + install</li>
+            <li><code>/dev inventory</code> full text report</li>
+            <li><code>/font</code> Nerd Font setup</li>
+            <li><code>/ask</code> quick one-off question</li>
+            <li><code>/run</code> run shell command</li>
+            <li><code>/about</code> version, safety, practices</li>
           </ul>
         </div>
         <div class="commands-col">
           <h3>CLI Flags</h3>
           <ul>
-            <li><code>-m, --model</code> -- select model</li>
-            <li><code>-p, --provider</code> -- LLM provider</li>
-            <li><code>-r, --resume</code> -- resume conversation</li>
-            <li><code>-s, --system</code> -- system prompt</li>
-            <li><code>-y, --yes</code> -- auto-approve tools</li>
-            <li><code>--no-tools</code> -- disable all tools</li>
-            <li><code>--safe</code> -- read-only mode</li>
-            <li><code>--verbose</code> -- debug output</li>
-            <li><code>--version</code> -- print version</li>
+            <li><code>emprise "question"</code> single-shot answer</li>
+            <li><code>emprise -c</code> continue last conversation</li>
+            <li><code>emprise --resume name</code> resume by name</li>
+            <li><code>emprise --list</code> list conversations</li>
+            <li><code>emprise update</code> self-update</li>
+            <li><code>emprise install</code> reinstall</li>
+            <li><code>cat file | emprise "explain"</code> pipe mode</li>
           </ul>
+        </div>
+      </div>
+
+      <div class="keyboard-shortcuts">
+        <h3>Keyboard</h3>
+        <div class="shortcuts-row">
+          <span><code>tab</code> complete commands</span>
+          <span><code>up/down</code> input history</span>
+          <span><code>esc</code> cancel / back</span>
+          <span><code>ctrl+c</code> quit</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEV ENVIRONMENT ============ -->
+  <section id="dev-environment">
+    <div class="container">
+      <h2 class="section-title">/dev Environment Audit</h2>
+      <p class="section-desc">emprise checks 40+ developer tools across 12 categories. Missing something? Select it and emprise installs it for you.</p>
+
+      <div class="dev-categories">
+        <div class="dev-cat"><h4>Core</h4><p>Git, SSH Key, Homebrew</p></div>
+        <div class="dev-cat"><h4>Languages</h4><p>nvm, Node.js, Go, Rust, Python, Java</p></div>
+        <div class="dev-cat"><h4>AI Tools</h4><p>Claude Code, GitHub Copilot, OpenAI Codex, Ollama, OpenCode</p></div>
+        <div class="dev-cat"><h4>Editors</h4><p>VS Code, JetBrains Toolbox, JetBrains IDEs</p></div>
+        <div class="dev-cat"><h4>Cloud</h4><p>AWS CLI, Azure CLI, GCP CLI, Terraform, kubectl, Helm</p></div>
+        <div class="dev-cat"><h4>Containers</h4><p>Podman, Docker</p></div>
+        <div class="dev-cat"><h4>Dev Tools</h4><p>GitHub CLI, GitHub Desktop, Make, jq, curl, ripgrep, npm, pip, ffmpeg, Caddy, .NET, PowerShell, Postman</p></div>
+        <div class="dev-cat"><h4>Security</h4><p>1Password, LastPass</p></div>
+        <div class="dev-cat"><h4>Browsers</h4><p>Chrome, Edge</p></div>
+        <div class="dev-cat"><h4>Databases</h4><p>PostgreSQL, Redis, SQLite</p></div>
+        <div class="dev-cat"><h4>Communication</h4><p>Slack, Teams</p></div>
+        <div class="dev-cat"><h4>Shell + Terminal</h4><p>zsh, Starship, tmux, htop/btop, iTerm2, Nerd Font</p></div>
+      </div>
+
+      <p class="section-note">Platform-aware: macOS (brew), Linux (apt), Windows (winget). Install commands shown inline.</p>
+    </div>
+  </section>
+
+  <!-- ============ SAFETY ============ -->
+  <section id="safety">
+    <div class="container">
+      <h2 class="section-title">Safety</h2>
+      <div class="safety-grid">
+        <div class="safety-item">
+          <h4>Blocked Commands</h4>
+          <p>rm -rf /, dd, mkfs and other destructive operations are hard-blocked.</p>
+        </div>
+        <div class="safety-item">
+          <h4>Protected Paths</h4>
+          <p>/etc, /usr, /System, and home dotfiles are protected from modification.</p>
+        </div>
+        <div class="safety-item">
+          <h4>Inline Visibility</h4>
+          <p>Every tool call is shown with its arguments before running. Nothing hidden.</p>
+        </div>
+        <div class="safety-item">
+          <h4>Context Limits</h4>
+          <p>File reads capped, output truncated, tool chains limited to 10 rounds.</p>
+        </div>
+        <div class="safety-item">
+          <h4>No Exfiltration</h4>
+          <p>Your code is only sent to the LLM provider you configured. Nothing else.</p>
+        </div>
+        <div class="safety-item">
+          <h4>Read-Only Default</h4>
+          <p>Most tools (system info, git status, file reading) are read-only and always safe.</p>
         </div>
       </div>
     </div>
@@ -193,7 +380,7 @@
   <!-- ============ FOOTER ============ -->
   <footer>
     <div class="container">
-      <p>Built by <a href="https://senzall.com">Senzall</a> | <a href="https://senzall.dev">senzall.dev</a></p>
+      <p>Built by Steve Sparks | <a href="https://github.com/senzalldev/emprise-app">GitHub</a></p>
     </div>
   </footer>
 
