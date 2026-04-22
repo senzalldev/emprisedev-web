@@ -125,10 +125,18 @@ details code{color:var(--teal);font-size:0.88rem}
 footer{text-align:center;padding:48px 0;border-top:1px solid var(--border);color:var(--text-muted);font-size:0.9rem}
 footer a{color:var(--teal)}
 
+/* providers */
+.providers-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.provider-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px}
+.provider-card h3{font-size:1.05rem;color:var(--teal);margin-bottom:4px}
+.provider-card .provider-type{font-size:0.78rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px}
+.provider-card p{font-size:0.88rem;color:var(--text-muted);line-height:1.5}
+.provider-card a{color:var(--teal)}
+
 /* responsive */
 @media(max-width:768px){
   .hero h1{font-size:2.4rem}
-  .features-grid,.use-cases-grid,.tools-grid,.safety-grid{grid-template-columns:1fr}
+  .features-grid,.use-cases-grid,.tools-grid,.safety-grid,.providers-grid{grid-template-columns:1fr}
   .commands-grid,.terminals-row{grid-template-columns:1fr}
   section{padding:56px 0}.hero{padding:64px 0 48px}
 }
