@@ -132,7 +132,15 @@ footer a{color:var(--teal)}
   .commands-grid,.terminals-row{grid-template-columns:1fr}
   section{padding:56px 0}.hero{padding:64px 0 48px}
 }
+/* community */
+.community-links{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:800px;margin:0 auto}
+.community-link{display:block;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;text-decoration:none;transition:border-color 0.2s}
+.community-link:hover{border-color:var(--teal);text-decoration:none}
+.community-link h4{color:var(--teal);margin-bottom:4px;font-size:1rem}
+.community-link p{color:var(--text-muted);font-size:0.85rem}
+
 @media(max-width:480px){
   .hero-icon{width:120px;height:120px}.hero h1{font-size:2rem}
   .terminal{font-size:0.78rem}
+  .community-links{grid-template-columns:repeat(2,1fr)}
 }
