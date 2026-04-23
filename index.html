@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>emprise — AI CLI assistant for developers</title>
-  <meta name="description" content="Cross-platform AI CLI assistant with 50+ tools, OAuth LLM support, PHI compliance, SQL tools, document parsing, and a profile wizard. Works with Ollama, OpenAI, Anthropic, GitHub Models, and custom OAuth providers.">
+  <title>emprise — AI-powered CLI + Desktop for developers</title>
+  <meta name="description" content="Cross-platform AI assistant with 96+ tools across 22 categories, Desktop app, document intelligence, PHI/HIPAA compliance, 6-layer prompt engineering, and multi-LLM support. CLI and Desktop share the same config.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='35' r='6' fill='%2358d1c9'/><line x1='50' y1='41' x2='50' y2='55' stroke='%2358d1c9' stroke-width='3'/><path d='M25 55 Q50 35 75 55' stroke='%2358d1c9' stroke-width='6' fill='none' stroke-linecap='round'/><line x1='50' y1='55' x2='50' y2='80' stroke='%2358d1c9' stroke-width='4'/><rect x='35' y='78' width='30' height='8' rx='3' fill='%233ba8a0'/></svg>">
 </head>
@@ -16,10 +16,10 @@
       <a href="#" class="nav-brand">emprise</a>
       <div class="nav-links">
         <a href="#features">Features</a>
-        <a href="#commands">Commands</a>
+        <a href="#tools">Tools</a>
+        <a href="#desktop-cli">Apps</a>
         <a href="#download">Download</a>
         <a href="https://github.com/senzalldev/emprise-app/wiki">Docs</a>
-        <a href="https://github.com/senzalldev/emprise-app/discussions">Community</a>
         <a href="https://github.com/senzalldev/emprise-app">GitHub</a>
       </div>
     </div>
@@ -45,13 +45,112 @@
       </div>
       <h1>emprise</h1>
       <p class="tagline">"a bold undertaking"</p>
-      <p class="subtitle">AI-powered CLI assistant with 50+ tools, OAuth LLM support, PHI compliance, SQL tools, document parsing, and a guided profile wizard. Your coding sidecar.</p>
+      <p class="subtitle">AI-powered CLI and Desktop app with 96+ tools, document intelligence, multi-LLM support, PHI/HIPAA compliance, and a 6-layer prompt engineering system. Both apps share the same config, tools, and workflows.</p>
       <div class="hero-buttons">
-        <a href="#download" class="btn">Download</a>
-        <a href="#commands" class="btn btn-outline">Commands</a>
-        <a href="#providers" class="btn btn-outline">Providers</a>
-        <a href="#story" class="btn btn-outline">The Story</a>
+        <a href="#download" class="btn">Download CLI</a>
+        <a href="https://github.com/senzalldev/emprise-app/releases" class="btn btn-outline">Desktop App</a>
+        <a href="https://github.com/senzalldev/emprise-app/wiki" class="btn btn-outline">Documentation</a>
       </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">96+</span><span class="stat-label">Tools</span></div>
+        <div class="stat"><span class="stat-num">22</span><span class="stat-label">Categories</span></div>
+        <div class="stat"><span class="stat-num">6</span><span class="stat-label">LLM Providers</span></div>
+        <div class="stat"><span class="stat-num">338</span><span class="stat-label">Tests</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section id="features">
+    <div class="container">
+      <h2 class="section-title">Features</h2>
+      <p class="section-desc">Everything you need to work with AI assistants, manage your environment, and handle documents — from the terminal or the desktop.</p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>96+ Built-in Tools</h3>
+          <p>System monitoring, file management, git operations, shell execution, Docker, SSH, databases, web fetching, document parsing, image handling, JSON processing, and more — across 22 categories.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Document Intelligence</h3>
+          <p>Index documents with FTS5 full-text search. Generate PDF, DOCX, HTML, Markdown, and plain text. Parse and ingest PDF, DOCX, XLSX, CSV, and more into conversations.</p>
+        </div>
+        <div class="feature-card">
+          <h3>6 LLM Providers</h3>
+          <p>Ollama (local), OpenAI, Anthropic, GitHub Models, Azure OpenAI, and custom OAuth endpoints. Switch providers instantly with profiles.</p>
+        </div>
+        <div class="feature-card">
+          <h3>PHI/HIPAA Compliance</h3>
+          <p>Toggle PHI mode to restrict all data to local-only processing. Enforces Ollama-only, disables network tools, enables audit logging, validates endpoints.</p>
+        </div>
+        <div class="feature-card">
+          <h3>6-Layer Prompt System</h3>
+          <p>Base identity, capability tier, role defaults, user rules, model overrides, and emphasis rules. Role presets for developer, devops, cloud, data, security, and admin.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Database Tools</h3>
+          <p>Query SQLite, PostgreSQL, MySQL, and SQL Server. Inspect schemas, describe tables, convert CSVs to SQLite. Formatted table output with execution timing.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Desktop + CLI</h3>
+          <p>Native desktop app built with Wails + Svelte alongside the terminal CLI. Both share the same configuration, tools, prompts, and conversation history.</p>
+        </div>
+        <div class="feature-card">
+          <h3>OAuth 2.0 Enterprise</h3>
+          <p>Device-code and authorization-code flows for enterprise identity providers. Automatic token refresh. Connect to any OpenAI-compatible endpoint behind OAuth.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Cron Scheduling</h3>
+          <p>Schedule recurring tasks with cron expressions. Automated queries, system checks, report generation, and more — running on your schedule.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Config Versioning</h3>
+          <p>Configuration backup and versioning with export/import. Share setups across machines. Track changes to your emprise configuration over time.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Configurable Output</h3>
+          <p>Set output limits per model or globally. Control response length, tool calls per turn, and context window usage. Tune for speed or depth.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Dev Environment Audit</h3>
+          <p><code>/dev</code> scans 40+ tools across categories. Missing something? Select it and emprise installs it. Platform-aware: brew, apt, or winget.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DESKTOP + CLI ============ -->
+  <section id="desktop-cli">
+    <div class="container">
+      <h2 class="section-title">Desktop + CLI</h2>
+      <p class="section-desc">Two interfaces, one brain. The Desktop app (Wails + Svelte) and the CLI share the same config, tools, prompts, and conversation history.</p>
+
+      <div class="dual-app-grid">
+        <div class="app-card">
+          <h3>Desktop App</h3>
+          <ul>
+            <li>Native window with Wails + Svelte</li>
+            <li>Dark, Light, and OLED themes</li>
+            <li>Visual tool management</li>
+            <li>Conversation browser with search</li>
+            <li>Document viewer and indexer</li>
+            <li>Profile switching with UI</li>
+          </ul>
+        </div>
+        <div class="app-card">
+          <h3>CLI</h3>
+          <ul>
+            <li>Full TUI with arrow-key menus</li>
+            <li>Pipe mode: <code>cat file | emprise</code></li>
+            <li>Single-shot: <code>emprise "question"</code></li>
+            <li>Tab completion for all commands</li>
+            <li>Diff view with syntax highlighting</li>
+            <li>Background processes and streaming</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="section-note">Both apps read from <code>~/.emprise/config.yaml</code> — change a setting in one and it applies to both.</p>
     </div>
   </section>
 
@@ -61,9 +160,8 @@
       <div class="terminal">
         <div class="terminal-bar"><span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span><span class="terminal-title">emprise</span></div>
         <div class="terminal-body">
-
-<span class="brand">   / | \</span>   <span class="brand">emprise</span> <span class="muted">v0.2.0</span>
-<span class="brand">  '--+--'</span>   <span class="blue">openai</span> <span class="muted">(gpt-4o)</span>
+<span class="brand">   / | \</span>   <span class="brand">emprise</span> <span class="muted">v0.3.0</span>
+<span class="brand">  '--+--'</span>   <span class="blue">anthropic</span> <span class="muted">(claude-sonnet-4)</span>
 <span class="brand">     |</span>      <span class="blue">~/project</span>
 <span class="muted">────────────────────────────────────────────────────</span>
   <span class="prompt">></span> <span class="muted">Ask anything... (/help for commands)</span>
@@ -74,159 +172,141 @@
     </div>
   </section>
 
-  <!-- ============ WHY EMPRISE ============ -->
-  <section id="why">
+  <!-- ============ TOOLS ============ -->
+  <section id="tools">
     <div class="container">
-      <h2 class="section-title">Your Coding Sidecar</h2>
-      <p class="section-desc">Use emprise alongside Claude Code, GitHub Copilot, or any coding assistant. While they focus deep on your codebase, emprise handles everything around it — system monitoring, environment setup, tool management, multi-LLM queries, and quick lookups that don't need your main AI's context window.</p>
+      <h2 class="section-title">96+ Tools in 22 Categories</h2>
+      <p class="section-desc">All tools execute asynchronously. Toggle on/off per category with <a href="https://github.com/senzalldev/emprise-app/wiki/Tools">/tools</a>. Every tool call is visible with arguments and output.</p>
+      <div class="tools-grid">
+        <div class="tool-cat"><h4>System</h4><p>get_os, get_cpu, get_memory, get_disk, get_processes, get_network, get_env, get_uptime</p></div>
+        <div class="tool-cat"><h4>Files</h4><p>read_file, write_file, list_dir, search_files, grep_files, edit_file, create_file, append_file, move_file, copy_file</p></div>
+        <div class="tool-cat"><h4>Git</h4><p>git_status, git_log, git_diff, git_branch, git_blame, git_pr_diff, git_commit, git_stash, git_tag</p></div>
+        <div class="tool-cat"><h4>Shell</h4><p>run_command — streaming output, configurable timeout, safety blocklist</p></div>
+        <div class="tool-cat"><h4>Web</h4><p>web_search, web_fetch, web_scrape</p></div>
+        <div class="tool-cat"><h4>Docker</h4><p>docker_ps, docker_logs, docker_images, docker_compose_status, docker_exec</p></div>
+        <div class="tool-cat"><h4>Process</h4><p>start_process, check_process, stop_process, list_processes_managed</p></div>
+        <div class="tool-cat"><h4>SSH</h4><p>ssh_run — connect to configured remote hosts</p></div>
+        <div class="tool-cat"><h4>Clipboard</h4><p>clipboard_read, clipboard_write — pbcopy/xclip/clip</p></div>
+        <div class="tool-cat"><h4>Dev</h4><p>run_tests, check_dependencies, notify, lint, format</p></div>
+        <div class="tool-cat"><h4>Image</h4><p>read_image, screenshot, image_resize</p></div>
+        <div class="tool-cat"><h4>JSON</h4><p>json_query, json_schema, json_transform — parse, query (jq-style), extract schemas, transform</p></div>
+        <div class="tool-cat"><h4>SQL</h4><p>sql_query, sql_schema, sql_describe, csv_to_sqlite — SQLite, PostgreSQL, MySQL, SQL Server</p></div>
+        <div class="tool-cat"><h4>Document Parsing</h4><p>read_folder, read_pdf, read_docx, read_xlsx, read_csv — batch directory ingestion</p></div>
+        <div class="tool-cat"><h4>Document Generation</h4><p>generate_pdf, generate_docx, generate_html, generate_markdown, generate_text</p></div>
+        <div class="tool-cat"><h4>Document Index</h4><p>index_documents, search_index, index_status — FTS5 full-text search engine</p></div>
+        <div class="tool-cat"><h4>Scheduling</h4><p>cron_create, cron_list, cron_delete, cron_status — recurring task automation</p></div>
+        <div class="tool-cat"><h4>Config</h4><p>config_export, config_import, config_backup, config_restore, config_diff</p></div>
+        <div class="tool-cat"><h4>Network</h4><p>http_request, ping, dns_lookup, port_scan</p></div>
+        <div class="tool-cat"><h4>Archive</h4><p>compress, decompress, list_archive</p></div>
+        <div class="tool-cat"><h4>Math</h4><p>calculate, convert_units, statistics</p></div>
+        <div class="tool-cat"><h4>Batch</h4><p>batch_run, parallel_exec — run multiple operations concurrently</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOCUMENT INTELLIGENCE ============ -->
+  <section id="documents">
+    <div class="container">
+      <h2 class="section-title">Document Intelligence</h2>
+      <p class="section-desc">Index, search, generate, and parse documents — all from the same interface.</p>
 
       <div class="features-grid">
         <div class="feature-card">
-          <h3>Interactive Everything</h3>
-          <p>Arrow-key menus for profiles, tools, models, history, prompts, and config. Consistent UX everywhere. Tab completion for all commands.</p>
+          <h3>FTS5 Search Index</h3>
+          <p>Index documents into a local FTS5-powered search engine. Full-text search across your document library with ranked results, snippets, and metadata filtering.</p>
         </div>
         <div class="feature-card">
-          <h3>50+ Built-in Tools</h3>
-          <p>System info, files, git, shell, web, Docker, SSH, clipboard, dev tools, <a href="https://github.com/senzalldev/emprise-app/wiki/SQL-Tools">SQL queries</a>, <a href="https://github.com/senzalldev/emprise-app/wiki/JSON-Tools">JSON processing</a>, and <a href="https://github.com/senzalldev/emprise-app/wiki/Document-Parsing">document parsing</a> — categorized and toggleable.</p>
-        </div>
-        <div class="feature-card">
-          <h3>5 LLM Providers + OAuth</h3>
-          <p>Ollama (local), OpenAI, Anthropic, GitHub Models, and <a href="https://github.com/senzalldev/emprise-app/wiki/OAuth-Setup">custom OAuth providers</a>. Enterprise IdP support via device-code or authorization-code flows.</p>
-        </div>
-        <div class="feature-card">
-          <h3>PHI Compliance</h3>
-          <p>Toggle <a href="https://github.com/senzalldev/emprise-app/wiki/PHI-Compliance">PHI mode</a> with <code>/phi</code> to restrict sensitive data handling. Enforces local-only LLMs, disables clipboard and network tools, and adds audit logging.</p>
+          <h3>Document Generation</h3>
+          <p>Generate documents in five formats: PDF, DOCX, HTML, Markdown, and plain text. Ask the LLM to create reports, summaries, or documentation and export directly to file.</p>
         </div>
         <div class="feature-card">
           <h3>Document Parsing</h3>
-          <p>Feed PDF, DOCX, XLSX, CSV, and plain text files directly into conversations. emprise extracts content and sends it as context. Supports <a href="https://github.com/senzalldev/emprise-app/wiki/Document-Parsing">batch folder reads</a> too.</p>
-        </div>
-        <div class="feature-card">
-          <h3>SQL Tools</h3>
-          <p>Query SQLite databases, inspect schemas, describe tables, and <a href="https://github.com/senzalldev/emprise-app/wiki/SQL-Tools">convert CSV files to SQLite</a> for ad-hoc analysis. Results rendered as formatted tables.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Profile Wizard</h3>
-          <p>Guided <a href="https://github.com/senzalldev/emprise-app/wiki/Profile-Wizard">setup wizard</a> walks through provider selection, OAuth or API key entry, model picking, and prompt configuration. Get started in under a minute.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Prompt Engineering</h3>
-          <p>Role-based emphasis presets (developer, devops, cloud, data, security, admin). Per-model overrides. Per-tool rules. <a href="https://github.com/senzalldev/emprise-app/wiki/Prompt-System">Test your prompt</a> against the LLM.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Dev Environment Audit</h3>
-          <p><a href="https://github.com/senzalldev/emprise-app/wiki/Dev-Command">/dev</a> scans 40+ tools across 12 categories. Missing something? Select it and emprise installs it. Platform-aware: brew, apt, or winget.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Diff View</h3>
-          <p>File writes show line-numbered diffs with syntax highlighting via chroma. Green for additions, red for removals, context lines around changes.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Config Export/Import</h3>
-          <p>Use <code>/config export</code> and <code>/config import</code> to share your setup across machines. Full configuration portability with <a href="https://github.com/senzalldev/emprise-app/wiki/Configuration">help docs</a> built in.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Conversation Management</h3>
-          <p>Name, save, resume, and export conversations. Browse history with search. Copy responses to clipboard. Capture and browse <a href="https://github.com/senzalldev/emprise-app/wiki/Code-Blocks">code blocks</a>.</p>
+          <p>Feed PDF, DOCX, XLSX, CSV, and plain text into conversations. Batch-ingest entire directories. Content is extracted and sent as LLM context automatically.</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ============ TERMINAL: PROFILE WIZARD WITH OAUTH ============ -->
-  <section class="terminal-section">
-    <div class="container">
-      <h2 class="section-title">Profile Wizard with OAuth</h2>
-      <div class="terminals-row">
-        <div class="terminal terminal-sm">
-          <div class="terminal-bar"><span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span><span class="terminal-title">/profiles &gt; New Profile</span></div>
-          <div class="terminal-body">
-<span class="muted">  Create Profile</span>
-
-  <span class="blue">Name</span>     <span class="white">enterprise</span>
-  <span class="blue">Provider</span> <span class="white">Custom OAuth</span>
-
-<span class="muted">  Authentication</span>
-<span class="cursor">  > </span><span class="brand">Device Code Flow</span>  <span class="green">(recommended)</span>
-<span class="muted">    Authorization Code</span>
-<span class="muted">    API Key (manual)</span>
-
-<span class="muted">  Opening browser for device authorization...</span>
-<span class="green">  &#10003; Token acquired</span>  <span class="muted">expires in 3600s</span>
-
-  <span class="blue">Model</span>   <span class="white">gpt-4o</span>
-  <span class="blue">Role</span>    <span class="white">developer</span>
-<span class="green">  &#10003; Profile "enterprise" created</span>
-</div>
-        </div>
-        <div class="terminal terminal-sm">
-          <div class="terminal-bar"><span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span><span class="terminal-title">/profile</span></div>
-          <div class="terminal-body">
-<span class="muted">  Switch Profile</span>
-
-<span class="muted">    local              ollama · llama3.2:3b</span>
-<span class="muted">    github             openai · gpt-4o</span>
-<span class="muted">    claude             anthropic · claude-sonnet-4</span>
-<span class="cursor">  > </span><span class="brand">enterprise</span>  <span class="green">(active)</span>  <span class="muted">oauth · gpt-4o</span>
-<span class="muted">    + New profile...</span>
-<span class="muted">    Edit profiles...</span>
-<span class="muted">    &larr; Back</span>
-</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ TERMINAL: SQL QUERY OUTPUT ============ -->
-  <section class="terminal-section">
-    <div class="container">
-      <h2 class="section-title">SQL Tools</h2>
-      <div class="terminal">
-        <div class="terminal-bar"><span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span><span class="terminal-title">sql query</span></div>
+      <div class="terminal" style="max-width:700px;margin:32px auto 0">
+        <div class="terminal-bar"><span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span><span class="terminal-title">document indexing</span></div>
         <div class="terminal-body">
-  <span class="prompt">></span> Show me the top users by order count from the sales database
+  <span class="prompt">></span> Index all the docs in ./contracts and search for renewal terms
 
-  <span class="tool">&#9679; sql_query(sales.db)</span>
-<span class="muted">    SELECT u.name, COUNT(o.id) AS orders, SUM(o.total) AS revenue</span>
-<span class="muted">    FROM users u JOIN orders o ON u.id = o.user_id</span>
-<span class="muted">    GROUP BY u.id ORDER BY orders DESC LIMIT 5</span>
+  <span class="tool">&#9679; index_documents(./contracts)</span>
+<span class="muted">    Indexed 47 documents (PDF, DOCX, TXT)</span>
+<span class="muted">    FTS5 index: 128,340 tokens</span>
 
-<span class="muted">    ┌─────────────────┬────────┬───────────┐</span>
-<span class="muted">    │</span> <span class="white">name</span>            <span class="muted">│</span> <span class="white">orders</span> <span class="muted">│</span> <span class="white">revenue</span>   <span class="muted">│</span>
-<span class="muted">    ├─────────────────┼────────┼───────────┤</span>
-<span class="muted">    │</span> <span class="blue">Alice Chen</span>      <span class="muted">│</span> <span class="green">142</span>    <span class="muted">│</span> <span class="green">$28,450</span>   <span class="muted">│</span>
-<span class="muted">    │</span> <span class="blue">Bob Martinez</span>    <span class="muted">│</span> <span class="green">98</span>     <span class="muted">│</span> <span class="green">$19,200</span>   <span class="muted">│</span>
-<span class="muted">    │</span> <span class="blue">Carol Johnson</span>   <span class="muted">│</span> <span class="green">87</span>     <span class="muted">│</span> <span class="green">$15,340</span>   <span class="muted">│</span>
-<span class="muted">    │</span> <span class="blue">David Park</span>      <span class="muted">│</span> <span class="green">73</span>     <span class="muted">│</span> <span class="green">$12,890</span>   <span class="muted">│</span>
-<span class="muted">    │</span> <span class="blue">Eve Williams</span>    <span class="muted">│</span> <span class="green">61</span>     <span class="muted">│</span> <span class="green">$11,720</span>   <span class="muted">│</span>
-<span class="muted">    └─────────────────┴────────┴───────────┘</span>
-<span class="muted">    5 rows · 0.003s</span>
+  <span class="tool">&#9679; search_index("renewal terms")</span>
+<span class="muted">    ┌────┬──────────────────────────┬───────┬──────────┐</span>
+<span class="muted">    │</span> <span class="white">#</span>  <span class="muted">│</span> <span class="white">Document</span>                <span class="muted">│</span> <span class="white">Score</span> <span class="muted">│</span> <span class="white">Format</span>   <span class="muted">│</span>
+<span class="muted">    ├────┼──────────────────────────┼───────┼──────────┤</span>
+<span class="muted">    │</span> <span class="green">1</span>  <span class="muted">│</span> <span class="blue">vendor-agreement.pdf</span>    <span class="muted">│</span> <span class="green">0.94</span>  <span class="muted">│</span> PDF      <span class="muted">│</span>
+<span class="muted">    │</span> <span class="green">2</span>  <span class="muted">│</span> <span class="blue">service-contract.docx</span>   <span class="muted">│</span> <span class="green">0.87</span>  <span class="muted">│</span> DOCX     <span class="muted">│</span>
+<span class="muted">    │</span> <span class="green">3</span>  <span class="muted">│</span> <span class="blue">lease-addendum.pdf</span>      <span class="muted">│</span> <span class="green">0.72</span>  <span class="muted">│</span> PDF      <span class="muted">│</span>
+<span class="muted">    └────┴──────────────────────────┴───────┴──────────┘</span>
 
-  Alice Chen leads with 142 orders totaling $28,450. The top 5
-  users account for 461 orders and $87,600 in revenue.
+  Found 3 documents with renewal clauses. The vendor agreement
+  has an auto-renewal on Jan 1 with 60-day notice required...
 </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ TERMINAL: MENUS ============ -->
-  <section class="terminal-section">
+  <!-- ============ LLM PROVIDERS ============ -->
+  <section id="providers">
     <div class="container">
-      <h2 class="section-title">Consistent Menus</h2>
-      <div class="terminals-row">
-        <div class="terminal terminal-sm">
-          <div class="terminal-bar"><span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span><span class="terminal-title">/tools > System</span></div>
-          <div class="terminal-body">
-<span class="muted">  Tools > System  (enter to toggle)</span>
+      <h2 class="section-title">LLM Providers</h2>
+      <p class="section-desc">Connect to any provider. Switch between them instantly with <a href="https://github.com/senzalldev/emprise-app/wiki/Profiles">/profile</a>.</p>
 
-<span class="cursor">  > </span><span class="green">on </span>  get_os          <span class="muted">Operating system info</span>
-    <span class="green">on </span>  get_cpu         <span class="muted">CPU info and load</span>
-    <span class="green">on </span>  get_memory      <span class="muted">Memory usage</span>
-    <span class="green">on </span>  get_disk        <span class="muted">Disk usage</span>
-    <span class="muted">off</span>  get_processes   <span class="muted">Running processes</span>
-<span class="muted">    &larr; Back</span>
-</div>
+      <div class="providers-grid">
+        <div class="provider-card">
+          <h3>Ollama</h3>
+          <p class="provider-type">Local / Free</p>
+          <p>Run models locally with complete privacy. No API key, no network. Auto-detects available models. Required for PHI compliance mode.</p>
         </div>
+        <div class="provider-card">
+          <h3>OpenAI</h3>
+          <p class="provider-type">Cloud / API Key</p>
+          <p>GPT-4o, GPT-4o-mini, o1, o3, and all OpenAI models. Pay-per-token pricing.</p>
+        </div>
+        <div class="provider-card">
+          <h3>Anthropic</h3>
+          <p class="provider-type">Cloud / API Key</p>
+          <p>Claude Opus, Sonnet, Haiku. Pay-per-token. Excellent for code review and analysis.</p>
+        </div>
+        <div class="provider-card">
+          <h3>GitHub Models</h3>
+          <p class="provider-type">Cloud / Free Tier</p>
+          <p>Access models through your GitHub subscription. Uses your existing GitHub token.</p>
+        </div>
+        <div class="provider-card">
+          <h3>Azure OpenAI</h3>
+          <p class="provider-type">Cloud / Enterprise</p>
+          <p>Connect to Azure-hosted OpenAI deployments. Enterprise compliance and data residency.</p>
+        </div>
+        <div class="provider-card">
+          <h3>Custom OAuth</h3>
+          <p class="provider-type">Enterprise / OAuth 2.0</p>
+          <p>Any OpenAI-compatible endpoint behind OAuth. Device-code and authorization-code flows with automatic token refresh.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROMPT ENGINEERING ============ -->
+  <section id="prompts">
+    <div class="container">
+      <h2 class="section-title">6-Layer Prompt Engineering</h2>
+      <p class="section-desc">emprise assembles the system prompt in 6 layers. Each layer adds context and rules that shape LLM behavior. <a href="https://github.com/senzalldev/emprise-app/wiki/Prompt-System">Full docs on the wiki.</a></p>
+
+      <div class="layers">
+        <div class="layer"><span class="layer-num">1</span><div><h4>Base Identity</h4><p>System info, OS, working directory, platform tools, emprise version</p></div></div>
+        <div class="layer"><span class="layer-num">2</span><div><h4>Capability Tier</h4><p>Auto-detected from model name. Small models get simpler instructions, large models get full context.</p></div></div>
+        <div class="layer"><span class="layer-num">3</span><div><h4>Role Defaults</h4><p>6 presets: developer, devops, cloud, data, security, admin — each with domain-specific rules</p></div></div>
+        <div class="layer"><span class="layer-num">4</span><div><h4>User Rules</h4><p>Custom instructions, user name, project context from .emprise.md files</p></div></div>
+        <div class="layer"><span class="layer-num">5</span><div><h4>Model Overrides</h4><p>Per-model tool limits, response length caps, extra rules for specific models</p></div></div>
+        <div class="layer"><span class="layer-num">6</span><div><h4>Emphasis Rules</h4><p>40+ toggleable rules. High emphasis repeats 3x for models that tend to ignore instructions.</p></div></div>
+      </div>
+
+      <div class="terminals-row">
         <div class="terminal terminal-sm">
           <div class="terminal-bar"><span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span><span class="terminal-title">/prompts</span></div>
           <div class="terminal-body">
@@ -244,13 +324,78 @@
 <span class="muted">    &larr; Back</span>
 </div>
         </div>
+        <div class="terminal terminal-sm">
+          <div class="terminal-bar"><span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span><span class="terminal-title">config.yaml</span></div>
+          <div class="terminal-body">
+<span class="purple">prompts:</span>
+  <span class="blue">user_name:</span> <span class="white">Steve</span>
+  <span class="blue">role:</span> <span class="white">developer</span>
+  <span class="blue">emphasis:</span>
+    <span class="green">write_to_file:</span> <span class="white">high</span>
+    <span class="green">branch_workflow:</span> <span class="white">medium</span>
+    <span class="green">docker_security:</span> <span class="white">off</span>
+  <span class="blue">model_overrides:</span>
+    <span class="yellow">"llama3.2:3b":</span>
+      <span class="green">max_tools_per_turn:</span> <span class="white">1</span>
+      <span class="green">extra_rules:</span>
+        <span class="muted">- "respond concisely"</span>
+</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ TERMINAL: DEV ============ -->
-  <section class="terminal-section">
+  <!-- ============ PHI COMPLIANCE ============ -->
+  <section id="phi">
     <div class="container">
+      <h2 class="section-title">PHI/HIPAA Compliance</h2>
+      <p class="section-desc">Toggle PHI mode for environments where protected health information must never leave the device.</p>
+
+      <div class="features-grid" style="grid-template-columns: repeat(2, 1fr)">
+        <div class="feature-card">
+          <h3>Data Isolation</h3>
+          <p>PHI mode enforces local-only LLM providers (Ollama). All clipboard, web, and SSH tools are disabled. Data never leaves your machine.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Audit Logging</h3>
+          <p>Every operation is logged to a dedicated audit file. Track what was queried, when, and which tools were invoked. Full accountability trail.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Endpoint Validation</h3>
+          <p>emprise validates that configured endpoints are truly local before allowing any data transmission. Prevents accidental cloud routing.</p>
+        </div>
+        <div class="feature-card">
+          <h3>One-Command Toggle</h3>
+          <p>Type <code>/phi</code> to enable or disable. Visual indicator in the status bar. All restrictions apply immediately and persist across sessions.</p>
+        </div>
+      </div>
+
+      <div class="terminal" style="max-width:540px;margin:32px auto 0">
+        <div class="terminal-bar"><span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span><span class="terminal-title">/phi</span></div>
+        <div class="terminal-body">
+<span class="muted">  PHI Compliance Mode</span>
+
+  <span class="blue">Status</span>    <span class="green">ENABLED</span>
+  <span class="blue">Provider</span>  <span class="white">ollama (local only)</span>
+  <span class="blue">Audit</span>    <span class="white">~/.emprise/phi-audit.log</span>
+
+<span class="muted">  Restrictions active:</span>
+  <span class="red">&#10007;</span>  <span class="muted">clipboard_read / clipboard_write</span>
+  <span class="red">&#10007;</span>  <span class="muted">web_search / web_fetch</span>
+  <span class="red">&#10007;</span>  <span class="muted">ssh_run</span>
+  <span class="green">&#10003;</span>  <span class="muted">Local file tools only</span>
+  <span class="green">&#10003;</span>  <span class="muted">All queries stay on-device</span>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEV ENVIRONMENT ============ -->
+  <section id="dev">
+    <div class="container">
+      <h2 class="section-title">Developer Environment Audit</h2>
+      <p class="section-desc"><code>/dev</code> scans 40+ tools across multiple categories. Missing something? Select it and emprise installs it with platform-aware package managers.</p>
+
       <div class="terminals-row">
         <div class="terminal terminal-sm">
           <div class="terminal-bar"><span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span><span class="terminal-title">/dev > Languages</span></div>
@@ -267,238 +412,24 @@
 </div>
         </div>
         <div class="terminal terminal-sm">
-          <div class="terminal-bar"><span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span><span class="terminal-title">/phi</span></div>
+          <div class="terminal-bar"><span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span><span class="terminal-title">/dev > Summary</span></div>
           <div class="terminal-body">
-<span class="muted">  PHI Compliance Mode</span>
+<span class="muted">  Developer Environment Summary</span>
 
-  <span class="blue">Status</span>    <span class="green">ENABLED</span>
-  <span class="blue">Provider</span>  <span class="white">ollama (local only)</span>
-  <span class="blue">Audit</span>    <span class="white">~/.emprise/phi-audit.log</span>
+  <span class="green">&#10003;</span> <span class="white">32</span> <span class="muted">tools installed</span>
+  <span class="red">&#10007;</span> <span class="white"> 8</span> <span class="muted">tools missing</span>
 
-<span class="muted">  Restrictions active:</span>
-  <span class="red">&#10007;</span>  <span class="muted">clipboard_read / clipboard_write</span>
-  <span class="red">&#10007;</span>  <span class="muted">web_search / web_fetch</span>
-  <span class="red">&#10007;</span>  <span class="muted">ssh_run</span>
-  <span class="green">&#10003;</span>  <span class="muted">Local file tools only</span>
-  <span class="green">&#10003;</span>  <span class="muted">All queries stay on-device</span>
+<span class="muted">  Categories:</span>
+  <span class="green">&#10003;</span>  Languages        <span class="muted">4/6</span>
+  <span class="green">&#10003;</span>  Package Mgrs     <span class="muted">3/3</span>
+  <span class="green">&#10003;</span>  Containers       <span class="muted">2/2</span>
+  <span class="yellow">!</span>  Editors          <span class="muted">1/3</span>
+  <span class="green">&#10003;</span>  Version Control  <span class="muted">3/3</span>
+  <span class="yellow">!</span>  Cloud CLIs       <span class="muted">0/4</span>
+
+  <span class="muted">Select any missing tool to install</span>
 </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ TERMINAL: DIFF VIEW ============ -->
-  <section class="terminal-section">
-    <div class="container">
-      <h2 class="section-title">Diff View with Syntax Highlighting</h2>
-      <div class="terminal">
-        <div class="terminal-bar"><span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span><span class="terminal-title">file edit</span></div>
-        <div class="terminal-body">
-<span class="tool">  &#9679; Edit(server.go)</span>
-<span class="muted">    &#9123; Replaced 1 occurrence in server.go</span>
-<span class="green">    &#9123; +3 -1 lines</span>
-<span class="muted">    &#9123;   12   func main() {</span>
-<span class="muted">    &#9123;   13       http.HandleFunc("/", handler)</span>
-<span class="red">    &#9123;   14 - fmt.Println("Starting...")</span>
-<span class="green">    &#9123;   14 + log.Printf("Server starting on :%d", port)</span>
-<span class="green">    &#9123;   15 + log.Printf("PID: %d", os.Getpid())</span>
-<span class="green">    &#9123;   16 + log.Fatal(http.ListenAndServe(addr, nil))</span>
-<span class="muted">    &#9123;   17   }</span>
-</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ USE CASES ============ -->
-  <section id="use-cases">
-    <div class="container">
-      <h2 class="section-title">Use Cases</h2>
-      <div class="use-cases-grid">
-        <div class="use-case">
-          <h3>Sidecar to Claude Code</h3>
-          <p>Run emprise in a second terminal while Claude Code handles your codebase. Ask emprise for system diagnostics, quick lookups, or a second opinion from a different LLM — without polluting Claude's context window.</p>
-        </div>
-        <div class="use-case">
-          <h3>New Machine Setup</h3>
-          <p>Type <code>/dev</code> on a fresh machine. emprise audits what's installed, shows what's missing, and installs tools with one keypress. Git, Node, Go, Docker, VS Code, Nerd Font — all platform-aware.</p>
-        </div>
-        <div class="use-case">
-          <h3>Quick System Check</h3>
-          <p>"What's using my CPU?" — emprise reads the tools first, then explains. No guessing. Real data from get_cpu, get_memory, get_processes, presented in a concise answer.</p>
-        </div>
-        <div class="use-case">
-          <h3>Multi-LLM Workflow</h3>
-          <p>Ask your local Ollama for quick questions (free, private). Switch to GPT-4o for complex reasoning. Try Claude for code review. All from the same interface with <code>/profile</code>.</p>
-        </div>
-        <div class="use-case">
-          <h3>Data Analysis with SQL</h3>
-          <p>Point emprise at a SQLite database or CSV file. It converts CSVs to SQLite on the fly, writes queries, and returns formatted table output. Ideal for ad-hoc data exploration.</p>
-        </div>
-        <div class="use-case">
-          <h3>Enterprise OAuth Integration</h3>
-          <p>Connect to your organization's LLM gateway via <a href="https://github.com/senzalldev/emprise-app/wiki/OAuth-Setup">OAuth device-code or authorization-code flow</a>. The profile wizard handles token acquisition, refresh, and secure storage.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PROVIDERS ============ -->
-  <section id="providers">
-    <div class="container">
-      <h2 class="section-title">Providers</h2>
-      <p class="section-desc">Connect to any LLM provider. Switch between them instantly with <a href="https://github.com/senzalldev/emprise-app/wiki/Profiles">/profile</a>.</p>
-
-      <div class="providers-grid">
-        <div class="provider-card">
-          <h3>Ollama</h3>
-          <p class="provider-type">Local / Free</p>
-          <p>Run models locally with complete privacy. No API key, no network. Auto-detects available models. Ideal for sensitive data and <a href="https://github.com/senzalldev/emprise-app/wiki/PHI-Compliance">PHI compliance</a>.</p>
-        </div>
-        <div class="provider-card">
-          <h3>OpenAI</h3>
-          <p class="provider-type">Cloud / API Key</p>
-          <p>GPT-4o, GPT-4o-mini, and all OpenAI models. Pay-per-token pricing. Best for complex reasoning and long-form generation.</p>
-        </div>
-        <div class="provider-card">
-          <h3>Anthropic</h3>
-          <p class="provider-type">Cloud / API Key</p>
-          <p>Claude Sonnet, Opus, Haiku. Pay-per-token. Excellent for code review, analysis, and nuanced responses.</p>
-        </div>
-        <div class="provider-card">
-          <h3>GitHub Models</h3>
-          <p class="provider-type">Cloud / Free with Copilot</p>
-          <p>Access OpenAI models through your GitHub Copilot subscription. Free tier included. Uses your existing GitHub token.</p>
-        </div>
-        <div class="provider-card">
-          <h3>Custom OAuth</h3>
-          <p class="provider-type">Enterprise / OAuth 2.0</p>
-          <p>Connect to any OpenAI-compatible endpoint behind OAuth. Supports <a href="https://github.com/senzalldev/emprise-app/wiki/OAuth-Setup">device-code and authorization-code flows</a>. Token refresh handled automatically.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ COMMANDS ============ -->
-  <section id="commands">
-    <div class="container">
-      <h2 class="section-title">Commands</h2>
-      <p class="section-desc">Full list of slash commands. See the <a href="https://github.com/senzalldev/emprise-app/wiki/Commands">wiki</a> for detailed docs.</p>
-      <div class="commands-grid">
-        <div class="commands-col">
-          <h3>Chat</h3>
-          <ul>
-            <li><code>/clear</code> reset conversation + screen</li>
-            <li><code>/cls</code> clear screen (keep context)</li>
-            <li><code>/name</code> name this conversation</li>
-            <li><code>/save</code> save to history</li>
-            <li><code>/history</code> browse past conversations</li>
-            <li><code>/copy</code> copy last response to clipboard</li>
-            <li><code>/code</code> browse captured code blocks</li>
-            <li><code>/export</code> export as markdown</li>
-            <li><code>/ask</code> quick one-off question</li>
-            <li><code>/run</code> run shell command</li>
-            <li><code>/exit</code> quit emprise</li>
-          </ul>
-        </div>
-        <div class="commands-col">
-          <h3>LLM</h3>
-          <ul>
-            <li><code>/profile</code> switch LLM profile</li>
-            <li><code>/profiles</code> manage all profiles</li>
-            <li><code>/model</code> switch model (picker or direct)</li>
-            <li><code>/config</code> settings menu</li>
-            <li><code>/config export</code> export config to file</li>
-            <li><code>/config import</code> import config from file</li>
-            <li><code>/config help</code> configuration docs</li>
-            <li><code>/tools</code> manage tools by category</li>
-            <li><code>/prompts</code> prompt emphasis per role</li>
-            <li><code>/system</code> view assembled system prompt</li>
-            <li><code>/setup</code> add a new LLM provider</li>
-          </ul>
-        </div>
-        <div class="commands-col">
-          <h3>Developer</h3>
-          <ul>
-            <li><code>/dev</code> <a href="https://github.com/senzalldev/emprise-app/wiki/Dev-Command">environment audit + install</a></li>
-            <li><code>/ps</code> background processes + URLs</li>
-            <li><code>/stop</code> stop a background process</li>
-            <li><code>/phi</code> <a href="https://github.com/senzalldev/emprise-app/wiki/PHI-Compliance">toggle PHI compliance mode</a></li>
-            <li><code>/font</code> Nerd Font setup</li>
-            <li><code>/cmdline</code> command-line flag reference</li>
-            <li><code>/stats</code> usage heat map per model</li>
-            <li><code>/about</code> version, safety, practices</li>
-          </ul>
-        </div>
-        <div class="commands-col">
-          <h3>CLI Flags</h3>
-          <ul>
-            <li><code>emprise "question"</code> single-shot</li>
-            <li><code>emprise -c</code> continue last conversation</li>
-            <li><code>emprise --resume name</code> resume by name</li>
-            <li><code>emprise --list</code> list conversations</li>
-            <li><code>emprise update</code> self-update</li>
-            <li><code>emprise install</code> reinstall</li>
-            <li><code>cat file | emprise</code> pipe mode</li>
-            <li><code>-y</code> auto-approve, <code>--yolo</code> skip all</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ TOOLS ============ -->
-  <section id="tools-detail">
-    <div class="container">
-      <h2 class="section-title">50+ Tools in 14 Categories</h2>
-      <p class="section-desc">All tools execute asynchronously. Toggle on/off per category with <a href="https://github.com/senzalldev/emprise-app/wiki/Tools">/tools</a>.</p>
-      <div class="tools-grid">
-        <div class="tool-cat"><h4>System</h4><p>get_os, get_cpu, get_memory, get_disk, get_processes, get_network, get_env</p></div>
-        <div class="tool-cat"><h4>Files</h4><p>read_file, write_file, list_dir, search_files, grep_files, edit_file, create_file, append_file</p></div>
-        <div class="tool-cat"><h4>Git</h4><p>git_status, git_log, git_diff, git_branch, git_blame, git_pr_diff, git_commit</p></div>
-        <div class="tool-cat"><h4>Shell</h4><p>run_command — streaming output, 30s timeout, safety blocklist</p></div>
-        <div class="tool-cat"><h4>Web</h4><p>web_search, web_fetch</p></div>
-        <div class="tool-cat"><h4>Docker</h4><p>docker_ps, docker_logs, docker_images, docker_compose_status</p></div>
-        <div class="tool-cat"><h4>Process</h4><p>start_process, check_process, stop_process, list_processes_managed</p></div>
-        <div class="tool-cat"><h4>SSH</h4><p>ssh_run — connect to configured remote hosts</p></div>
-        <div class="tool-cat"><h4>Clipboard</h4><p>clipboard_read, clipboard_write — pbcopy/xclip/clip</p></div>
-        <div class="tool-cat"><h4>Dev</h4><p>run_tests, check_dependencies, notify</p></div>
-        <div class="tool-cat"><h4>Image</h4><p>read_image, screenshot</p></div>
-        <div class="tool-cat"><h4><a href="https://github.com/senzalldev/emprise-app/wiki/JSON-Tools">JSON</a></h4><p>json_query, json_schema — parse, query (jq-style), and extract schemas from JSON files</p></div>
-        <div class="tool-cat"><h4><a href="https://github.com/senzalldev/emprise-app/wiki/SQL-Tools">SQL</a></h4><p>sql_query, sql_schema, sql_describe, csv_to_sqlite — query databases, inspect schemas, convert CSVs</p></div>
-        <div class="tool-cat"><h4><a href="https://github.com/senzalldev/emprise-app/wiki/Document-Parsing">Batch</a></h4><p>read_folder — read entire directories. Supports PDF, DOCX, XLSX, CSV, TXT, JSON, and Markdown</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PROMPT ENGINE ============ -->
-  <section id="prompts">
-    <div class="container">
-      <h2 class="section-title">Prompt Engineering System</h2>
-      <p class="section-desc">emprise assembles the system prompt in 6 layers. Each layer adds context and rules that shape how the LLM behaves. <a href="https://github.com/senzalldev/emprise-app/wiki/Prompt-System">Full docs on the wiki.</a></p>
-
-      <div class="layers">
-        <div class="layer"><span class="layer-num">1</span><h4>Base</h4><p>Identity, system info, OS, working directory, platform tools</p></div>
-        <div class="layer"><span class="layer-num">2</span><h4>Capability Tier</h4><p>Auto-detected from model name. Small models get simpler instructions.</p></div>
-        <div class="layer"><span class="layer-num">3</span><h4>Role Defaults</h4><p>6 presets: developer, devops, cloud, data, security, admin</p></div>
-        <div class="layer"><span class="layer-num">4</span><h4>User Rules</h4><p>Custom instructions and user name from config</p></div>
-        <div class="layer"><span class="layer-num">5</span><h4>Model Overrides</h4><p>Per-model tool limits, response length, extra rules</p></div>
-        <div class="layer"><span class="layer-num">6</span><h4>Emphasis</h4><p>40+ toggleable rules. High emphasis repeats 3x for weak models.</p></div>
-      </div>
-
-      <div class="config-example">
-        <h3>Example Config</h3>
-        <pre><code>prompts:
-  user_name: Steve
-  role: developer
-  emphasis:
-    write_to_file: high
-    branch_workflow: medium
-    docker_security: off
-  model_overrides:
-    "llama3.2:3b":
-      max_tools_per_turn: 1
-      extra_rules:
-        - "respond in 1-3 sentences only"</code></pre>
       </div>
     </div>
   </section>
@@ -507,18 +438,36 @@
   <section id="download">
     <div class="container">
       <h2 class="section-title">Download</h2>
+      <p class="section-desc">CLI and Desktop app available for macOS, Linux, and Windows.</p>
+
       <div class="download-table-wrap">
         <table class="download-table">
-          <thead><tr><th>Platform</th><th>Format</th><th>Notes</th><th></th></tr></thead>
+          <thead><tr><th>Platform</th><th>CLI</th><th>Desktop</th><th>Notes</th></tr></thead>
           <tbody>
-            <tr><td>macOS</td><td>DMG</td><td>Apple Silicon, signed and notarized</td><td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-macos.dmg" class="btn btn-sm">Download</a></td></tr>
-            <tr><td>Linux</td><td>Binary</td><td>x86_64 static binary</td><td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-linux-amd64" class="btn btn-sm">Download</a></td></tr>
-            <tr><td>Windows</td><td>EXE</td><td>Portable executable</td><td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-windows-amd64.exe" class="btn btn-sm">Download</a></td></tr>
+            <tr>
+              <td>macOS</td>
+              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-macos.dmg" class="btn btn-sm">DMG</a></td>
+              <td><a href="https://github.com/senzalldev/emprise-app/releases" class="btn btn-sm btn-outline">Desktop</a></td>
+              <td>Apple Silicon, signed and notarized</td>
+            </tr>
+            <tr>
+              <td>Linux</td>
+              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-linux-amd64" class="btn btn-sm">Binary</a></td>
+              <td><a href="https://github.com/senzalldev/emprise-app/releases" class="btn btn-sm btn-outline">AppImage</a></td>
+              <td>x86_64 static binary</td>
+            </tr>
+            <tr>
+              <td>Windows</td>
+              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-windows-amd64.exe" class="btn btn-sm">EXE</a></td>
+              <td><a href="https://github.com/senzalldev/emprise-app/releases" class="btn btn-sm btn-outline">Installer</a></td>
+              <td>Portable executable</td>
+            </tr>
           </tbody>
         </table>
       </div>
+
       <div class="install-cmd"><span class="muted">$</span> curl -fsSL https://raw.githubusercontent.com/senzalldev/emprise-app/main/install.sh | sh</div>
-      <p class="install-note">Or update: <code>emprise update</code> — checks on launch, auto-restarts with new version.</p>
+      <p class="install-note">Or update anytime: <code>emprise update</code> — checks on launch and auto-restarts with the new version.</p>
     </div>
   </section>
 
@@ -531,83 +480,8 @@
         <div class="safety-item"><h4>Protected Paths</h4><p>/etc, /usr, /System, and home dotfiles are protected from modification.</p></div>
         <div class="safety-item"><h4>Inline Visibility</h4><p>Every tool call is shown with its arguments and output. Nothing runs hidden.</p></div>
         <div class="safety-item"><h4>Async + Cancellable</h4><p>Tools run asynchronously. Press esc or ctrl+c to cancel any operation at any time.</p></div>
-        <div class="safety-item"><h4>No Exfiltration</h4><p>Your code is only sent to the LLM provider you configured. Nothing else.</p></div>
-        <div class="safety-item"><h4>PHI Compliance</h4><p><a href="https://github.com/senzalldev/emprise-app/wiki/PHI-Compliance">/phi mode</a> restricts tools to local-only, disables network and clipboard access, and enables audit logging for sensitive environments.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ THE STORY ============ -->
-  <section id="story">
-    <div class="container">
-      <h2 class="section-title">The Story</h2>
-      <div class="story">
-        <p>emprise is named after <em>Emprise</em>, the first book in Michael P. Kube-McDowell's Trigon Disunity trilogy. In the novel, humanity builds a massive radio telescope to make first contact with an alien civilization — a bold, almost impossible undertaking driven by curiosity and courage.</p>
-
-        <p>The word "emprise" itself means "a bold or chivalrous undertaking." That's what building a personal AI assistant feels like — reaching out into the unknown with the tools you have, making something useful from complexity.</p>
-
-        <p>The radio dish in the logo represents that telescope — humanity's signal reaching outward. The teal color scheme echoes the cold clarity of space and the warmth of connection.</p>
-
-        <p>emprise was built by <strong>Steve Sparks</strong> as a companion tool for developers who work with AI coding assistants. It started as an experiment in Go with bubbletea, grew into a full TUI with 50+ tools, and evolved into a prompt engineering platform that adapts to how you work.</p>
-
-        <p>Built with the help of <strong>Claude</strong> (Anthropic) through extensive pair programming sessions using Claude Code. The entire codebase, CI/CD pipeline, and this website were developed collaboratively — human vision and AI execution working together. Which is exactly what emprise is designed to enable for you.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FAQ ============ -->
-  <section id="faq">
-    <div class="container">
-      <h2 class="section-title">FAQ</h2>
-      <div class="faq-list">
-        <details>
-          <summary>How is emprise different from Claude Code?</summary>
-          <p>Claude Code is a deep coding assistant — it understands your codebase, writes code, and manages complex refactors. emprise is a broad system companion — it monitors your machine, manages your dev environment, queries multiple LLMs, and handles the operational side of development. They work great together: Claude Code in one terminal for deep coding, emprise in another for everything else.</p>
-        </details>
-        <details>
-          <summary>Do I need an API key?</summary>
-          <p>Not necessarily. You can use Ollama for fully local, free LLM access — no API key, no network, complete privacy. emprise also supports GitHub Models (free with a Copilot subscription), OpenAI (pay-per-token), and Anthropic (pay-per-token). For enterprise setups, you can use <a href="https://github.com/senzalldev/emprise-app/wiki/OAuth-Setup">Custom OAuth</a> to connect through your organization's identity provider.</p>
-        </details>
-        <details>
-          <summary>How does OAuth work?</summary>
-          <p>The <a href="https://github.com/senzalldev/emprise-app/wiki/Profile-Wizard">profile wizard</a> supports two OAuth flows: device-code (opens a browser, you approve on the IdP page) and authorization-code (redirect-based). Tokens are stored securely in your config and refreshed automatically. Any OpenAI-compatible endpoint behind OAuth is supported.</p>
-        </details>
-        <details>
-          <summary>What is PHI compliance mode?</summary>
-          <p><a href="https://github.com/senzalldev/emprise-app/wiki/PHI-Compliance">/phi</a> enables Protected Health Information mode. It restricts emprise to local-only LLM providers (Ollama), disables clipboard, web, and SSH tools, and writes an audit log of all operations. Designed for environments where data must never leave the device.</p>
-        </details>
-        <details>
-          <summary>What SQL capabilities does emprise have?</summary>
-          <p>emprise includes <a href="https://github.com/senzalldev/emprise-app/wiki/SQL-Tools">four SQL tools</a>: sql_query runs SELECT queries against SQLite databases, sql_schema lists all tables and columns, sql_describe shows detailed table info, and csv_to_sqlite converts CSV files to SQLite for ad-hoc analysis. Results are rendered as formatted tables.</p>
-        </details>
-        <details>
-          <summary>What document formats can emprise parse?</summary>
-          <p>emprise can read and extract content from PDF, DOCX, XLSX, CSV, TXT, JSON, and Markdown files. Use <a href="https://github.com/senzalldev/emprise-app/wiki/Document-Parsing">read_folder</a> to batch-ingest an entire directory. Extracted content is sent to the LLM as conversation context.</p>
-        </details>
-        <details>
-          <summary>Is it safe to let emprise run commands?</summary>
-          <p>emprise has multiple safety layers: destructive commands are hard-blocked (rm -rf, dd, mkfs), protected system paths can't be modified, every tool call is shown with its arguments before running, and you can cancel any operation with esc. Tools execute asynchronously so the UI is always responsive.</p>
-        </details>
-        <details>
-          <summary>Can I use it on Linux/Windows?</summary>
-          <p>Yes. emprise is cross-platform Go. The /dev environment audit uses platform-appropriate package managers (brew on macOS, apt on Linux, winget on Windows). All tools work on all platforms.</p>
-        </details>
-        <details>
-          <summary>How does the prompt engineering work?</summary>
-          <p>emprise builds the system prompt in <a href="https://github.com/senzalldev/emprise-app/wiki/Prompt-System">6 layers</a>: base identity, capability tier (auto-detected from model size), role defaults (developer/devops/etc.), your custom rules, model-specific overrides, and emphasis rules. You configure it through /prompts or in ~/.emprise/config.yaml. High-emphasis rules are repeated multiple times for smaller models that tend to ignore instructions.</p>
-        </details>
-        <details>
-          <summary>Can I use my own Ollama models?</summary>
-          <p>Yes. Run /model to see all models on your Ollama server. emprise queries the Ollama API directly and adapts its prompt based on the model's capability tier.</p>
-        </details>
-        <details>
-          <summary>What's the .emprise.md file?</summary>
-          <p>Drop an .emprise.md file in your project root with notes about your codebase, conventions, or anything the LLM should know. emprise reads it automatically and adds it to the system prompt as project context. <a href="https://github.com/senzalldev/emprise-app/wiki/Project-Context">Learn more on the wiki.</a></p>
-        </details>
-        <details>
-          <summary>How do I update?</summary>
-          <p>Type "emprise update" — from the command line or inside emprise itself. On macOS, it downloads the signed DMG, replaces the .app bundle, and restarts. emprise also checks for updates at launch and hourly.</p>
-        </details>
+        <div class="safety-item"><h4>No Exfiltration</h4><p>Your data is only sent to the LLM provider you configured. Nothing else phones home.</p></div>
+        <div class="safety-item"><h4>338 Tests</h4><p>Comprehensive test suite covering tools, prompts, config, providers, and safety mechanisms.</p></div>
       </div>
     </div>
   </section>
@@ -623,7 +497,7 @@
         </a>
         <a href="https://github.com/senzalldev/emprise-app/discussions" class="community-link">
           <h4>Discussions</h4>
-          <p>Questions, ideas, show & tell</p>
+          <p>Questions, ideas, show and tell</p>
         </a>
         <a href="https://github.com/senzalldev/emprise-app/issues" class="community-link">
           <h4>Issues</h4>
@@ -640,7 +514,7 @@
   <!-- ============ FOOTER ============ -->
   <footer>
     <div class="container">
-      <p>Built by Steve Sparks · Crafted with Claude · <a href="https://github.com/senzalldev/emprise-app">GitHub</a> · <a href="https://github.com/senzalldev/emprise-app/wiki">Wiki</a> · <a href="https://github.com/senzalldev/emprise-app/discussions">Discussions</a></p>
+      <p>Built by Steve Sparks &middot; Crafted with Claude &middot; <a href="https://github.com/senzalldev/emprise-app">GitHub</a> &middot; <a href="https://github.com/senzalldev/emprise-app/wiki">Wiki</a> &middot; <a href="https://github.com/senzalldev/emprise-app/discussions">Discussions</a></p>
     </div>
   </footer>
 
