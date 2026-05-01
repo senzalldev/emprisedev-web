@@ -15,9 +15,9 @@
     <div class="container nav-row">
       <a href="#" class="nav-brand">emprise</a>
       <div class="nav-links">
+        <a href="#desktop-tour">Desktop</a>
         <a href="#features">Features</a>
         <a href="#tools">Tools</a>
-        <a href="#desktop-cli">Apps</a>
         <a href="#download">Download</a>
         <a href="https://github.com/senzalldev/emprise-app/wiki">Docs</a>
         <a href="https://github.com/senzalldev/emprise-app">GitHub</a>
@@ -45,17 +45,52 @@
       </div>
       <h1>emprise</h1>
       <p class="tagline">"a bold undertaking"</p>
-      <p class="subtitle">AI-powered CLI and Desktop app with 96+ tools, document intelligence, multi-LLM support, PHI/HIPAA compliance, and a 6-layer prompt engineering system. Both apps share the same config, tools, and workflows.</p>
+      <p class="subtitle">An AI-powered <strong>Desktop app</strong> and matching <strong>CLI</strong> with 96+ tools, document intelligence, multi-LLM support, web-context grounding, embeddings-based semantic search, PHI/HIPAA compliance, and a layered prompt engineering system. Both binaries share the same config, conversation history, indexes, and memories.</p>
+      <p class="experimental-banner"><strong>⚠ Experimental — work in progress, no warranty.</strong> Source is private; we ship signed builds. Use at your own risk.</p>
       <div class="hero-buttons">
-        <a href="#download" class="btn">Download CLI</a>
-        <a href="https://github.com/senzalldev/emprise-app/releases" class="btn btn-outline">Desktop App</a>
-        <a href="https://github.com/senzalldev/emprise-app/wiki" class="btn btn-outline">Documentation</a>
+        <a href="#download" class="btn">Download Desktop</a>
+        <a href="#download" class="btn btn-outline">Download CLI</a>
+        <a href="https://github.com/senzalldev/emprise-app/wiki" class="btn btn-outline">Wiki</a>
       </div>
       <div class="hero-stats">
         <div class="stat"><span class="stat-num">96+</span><span class="stat-label">Tools</span></div>
         <div class="stat"><span class="stat-num">22</span><span class="stat-label">Categories</span></div>
         <div class="stat"><span class="stat-num">6</span><span class="stat-label">LLM Providers</span></div>
         <div class="stat"><span class="stat-num">338</span><span class="stat-label">Tests</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DESKTOP HERO SHOTS ============ -->
+  <section id="desktop-tour">
+    <div class="container">
+      <h2 class="section-title">Desktop App, at a glance</h2>
+      <p class="section-desc">Native macOS / Linux / Windows app built with Wails v2 + Svelte. Same Go runtime as the CLI, same config, same SQLite history.</p>
+      <div class="screenshot-row">
+        <figure>
+          <img src="images/01-welcome.png" alt="Emprise Desktop welcome screen" loading="lazy">
+          <figcaption>Welcome screen with attached-context picker (Index / DB / MCP / Web / Memory)</figcaption>
+        </figure>
+        <figure>
+          <img src="images/02-profiles.png" alt="Profiles tab — 28 configured" loading="lazy">
+          <figcaption>Profiles — Detect Ollama, GitHub Models OAuth, Azure, custom OAuth all in one place</figcaption>
+        </figure>
+        <figure>
+          <img src="images/05-prompts-emphasis.png" alt="Prompts tab with emphasis categories" loading="lazy">
+          <figcaption>The 6-layer prompt system with toggleable emphasis categories</figcaption>
+        </figure>
+        <figure>
+          <img src="images/07-data-sources.png" alt="Data sources — indexes, web contexts, databases" loading="lazy">
+          <figcaption>Data sources — FTS5 document indexes, web contexts, SQL databases (incl. Azure AD)</figcaption>
+        </figure>
+        <figure>
+          <img src="images/16-compose-prompt.png" alt="Compose prompt modal with AI-refined version" loading="lazy">
+          <figcaption>Prompt composer — AI-refined version side-by-side with your draft</figcaption>
+        </figure>
+        <figure>
+          <img src="images/18-pdf-export.png" alt="Tool stream produces a PDF artifact with Open folder action" loading="lazy">
+          <figcaption>Generated artifacts — click the path or Open folder to launch in Preview / default app</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -442,32 +477,33 @@
 
       <div class="download-table-wrap">
         <table class="download-table">
-          <thead><tr><th>Platform</th><th>CLI</th><th>Desktop</th><th>Notes</th></tr></thead>
+          <thead><tr><th>Platform</th><th>Desktop</th><th>CLI</th><th>Notes</th></tr></thead>
           <tbody>
             <tr>
-              <td>macOS</td>
-              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-macos.dmg" class="btn btn-sm">DMG</a></td>
-              <td><a href="https://github.com/senzalldev/emprise-app/releases" class="btn btn-sm btn-outline">Desktop</a></td>
-              <td>Apple Silicon, signed and notarized</td>
+              <td>macOS (Apple Silicon)</td>
+              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-desktop-macos.dmg" class="btn btn-sm">Desktop DMG</a></td>
+              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-darwin-arm64" class="btn btn-sm btn-outline">CLI</a></td>
+              <td>Both signed + notarized — no Gatekeeper warnings</td>
             </tr>
             <tr>
-              <td>Linux</td>
-              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-linux-amd64" class="btn btn-sm">Binary</a></td>
-              <td><a href="https://github.com/senzalldev/emprise-app/releases" class="btn btn-sm btn-outline">AppImage</a></td>
-              <td>x86_64 static binary</td>
+              <td>Windows (amd64)</td>
+              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-desktop-windows-installer.exe" class="btn btn-sm">NSIS Installer</a></td>
+              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-windows-amd64.exe" class="btn btn-sm btn-outline">CLI .exe</a></td>
+              <td>Bootstraps WebView2 if missing</td>
             </tr>
             <tr>
-              <td>Windows</td>
-              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-windows-amd64.exe" class="btn btn-sm">EXE</a></td>
-              <td><a href="https://github.com/senzalldev/emprise-app/releases" class="btn btn-sm btn-outline">Installer</a></td>
-              <td>Portable executable</td>
+              <td>Linux (amd64)</td>
+              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-desktop-linux-amd64.tar.gz" class="btn btn-sm">tar.gz</a></td>
+              <td><a href="https://github.com/senzalldev/emprise-app/releases/latest/download/emprise-linux-amd64" class="btn btn-sm btn-outline">CLI</a></td>
+              <td>Needs <code>libwebkit2gtk-4.0-37</code> + <code>libgtk-3-0</code></td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <div class="install-cmd"><span class="muted">$</span> curl -fsSL https://raw.githubusercontent.com/senzalldev/emprise-app/main/install.sh | sh</div>
-      <p class="install-note">Or update anytime: <code>emprise update</code> — checks on launch and auto-restarts with the new version.</p>
+      <p class="install-note">Install script auto-detects your platform on macOS and Linux. Update anytime with <code>emprise update</code> — checks on launch and atomically swaps in the new binary.</p>
+      <p class="install-note"><strong>Source is private.</strong> If a binary you need isn't in the latest release, please <a href="https://github.com/senzalldev/emprise-app/issues">file an issue</a> — it's a CI matter, not a build-it-yourself one.</p>
     </div>
   </section>
 
