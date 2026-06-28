@@ -51,8 +51,8 @@ brew install --cask senzalldev/tap/emprise-desktop  # Desktop (macOS)</code></pr
         <pre><code>curl -fsSL https://emprise.dev/install.sh | sh</code></pre>
         <p class="get-it-alt"><a href="#download">Windows &amp; Desktop downloads</a> · then run <code>emprise init</code> in any repo and paste an API key — that's the whole setup.</p>
       </div>
-      <p class="subtitle">A <strong>CLI</strong> and matching <strong>Desktop app</strong>: OpenAI, Anthropic, Google, or fully local with Ollama. 96+ tools, vision paste, document intelligence, PHI/HIPAA mode, undo for every file edit, and plugins from any shell script. One config, one history, both surfaces.</p>
-      <p class="experimental-banner"><strong>⚠ Experimental — work in progress, no warranty.</strong> Source is private; we ship signed builds. Use at your own risk.</p>
+      <p class="subtitle">A <strong>CLI</strong> and matching <strong>Desktop app</strong> for macOS, Linux, and Windows. Bring any provider — OpenAI, Anthropic, Google Gemini — or stay fully local with Ollama. API keys are encrypted at rest on your machine, never in plaintext. 96+ tools, plan mode, vision paste, document intelligence, PHI/HIPAA mode, undo for every file edit, and plugins from any shell script. One config, one history, both surfaces.</p>
+      <p class="experimental-banner"><strong>△ Experimental — work in progress, no warranty.</strong> Source is private; we ship signed builds. Use at your own risk.</p>
       <div class="hero-buttons">
         <a href="#story" class="btn btn-outline">Why emprise</a>
         <a href="https://github.com/senzalldev/emprise-app/wiki" class="btn btn-outline">Wiki</a>
@@ -60,7 +60,7 @@ brew install --cask senzalldev/tap/emprise-desktop  # Desktop (macOS)</code></pr
       <div class="hero-stats">
         <div class="stat"><span class="stat-num">96+</span><span class="stat-label">Tools</span></div>
         <div class="stat"><span class="stat-num">22</span><span class="stat-label">Categories</span></div>
-        <div class="stat"><span class="stat-num">6</span><span class="stat-label">LLM Providers</span></div>
+        <div class="stat"><span class="stat-num">7</span><span class="stat-label">LLM Providers</span></div>
         <div class="stat"><span class="stat-num">338</span><span class="stat-label">Tests</span></div>
       </div>
     </div>
@@ -113,6 +113,7 @@ brew install --cask senzalldev/tap/emprise-desktop  # Desktop (macOS)</code></pr
     <div class="container">
       <h2 class="section-title">Features</h2>
       <p class="section-desc">Everything you need to work with AI assistants, manage your environment, and handle documents — from the terminal or the desktop.</p>
+      <p class="section-note"><strong>New in v0.9.2:</strong> plan mode (<code>/plan</code>), a <code>/stats</code> activity heat map, slow-network resilience (progress-bar updates, longer timeouts for install/build commands), and encrypted-at-rest API keys.</p>
 
       <div class="features-grid">
         <div class="feature-card">
@@ -125,7 +126,7 @@ brew install --cask senzalldev/tap/emprise-desktop  # Desktop (macOS)</code></pr
         </div>
         <div class="feature-card">
           <h3>7 LLM Providers</h3>
-          <p>Ollama (local), OpenAI, Anthropic, Google AI, GitHub Models, Azure OpenAI / AI Foundry, and custom OAuth endpoints. Switch providers instantly with profiles.</p>
+          <p>Ollama (local), OpenAI, Anthropic, Google Gemini, GitHub Models, Azure OpenAI / AI Foundry, and custom OAuth endpoints. Switch providers instantly with profiles.</p>
         </div>
         <div class="feature-card">
           <h3>Vision: Paste Images</h3>
@@ -136,8 +137,24 @@ brew install --cask senzalldev/tap/emprise-desktop  # Desktop (macOS)</code></pr
           <p>Automatic retries with visible backoff status, provider prompt caching (99% cached input measured on repeat turns), lazy tool loading that cuts per-round tokens ~74%, and real-dollar session costs with zero setup.</p>
         </div>
         <div class="feature-card">
-          <h3>Encrypted Key Setup</h3>
-          <p>Paste an API key — emprise detects the provider and creates a tested profile in one keystroke. Keys are encrypted at rest (ChaCha20-Poly1305) and never written in plaintext or sent to a model. OpenAI, Anthropic, and Google keys recognized on sight.</p>
+          <h3>Encrypted Key Storage</h3>
+          <p>API keys are never written in plaintext. Each secret is encrypted at rest with ChaCha20-Poly1305 into <code>~/.emprise/secrets.dat</code> and referenced from your profile by handle. Existing plaintext keys migrate automatically on first launch — your config is backed up, then rewritten to use references. Keys are never sent to a model.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Standard vs Advanced Setup</h3>
+          <p>First-run setup is lean: provider → key → model → chat. The profile editor shows only what matters up front; base URL, auth type, PHI mode, streaming, tokens, temperature, context size, timeouts, and tool rounds tuck behind a collapsible Advanced settings section.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Plan Mode — /plan</h3>
+          <p><code>/plan &lt;goal&gt;</code> has the model propose an ordered, tool-aware plan: each step lists the tools it will use. Review it, delete steps, refine with feedback, then approve to execute through the normal flow. Think before you run.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Usage Analytics — /stats</h3>
+          <p><code>/stats</code> shows a GitHub-style activity heat map of the last ~12 weeks plus a Top Tools breakdown of which tools you actually use most. See your real working patterns at a glance.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Resilient on Slow Networks</h3>
+          <p>Updates stream with a live progress bar (percent, transferred/total, speed) instead of timing out on hotspot or gym wifi. Install, build, and network shell commands (brew, npm, apt, pip, git, go, docker) get a 15-minute timeout so long operations finish.</p>
         </div>
         <div class="feature-card">
           <h3>Built for Scripting</h3>
@@ -224,7 +241,7 @@ brew install --cask senzalldev/tap/emprise-desktop  # Desktop (macOS)</code></pr
       <div class="terminal">
         <div class="terminal-bar"><span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span><span class="terminal-title">emprise</span></div>
         <div class="terminal-body">
-<span class="brand">   / | \</span>   <span class="brand">emprise</span> <span class="muted">v0.9.0</span>
+<span class="brand">   / | \</span>   <span class="brand">emprise</span> <span class="muted">v0.9.2</span>
 <span class="brand">  '--+--'</span>   <span class="blue">anthropic</span> <span class="muted">(claude-sonnet-4)</span>
 <span class="brand">     |</span>      <span class="blue">~/project</span>
 <span class="muted">────────────────────────────────────────────────────</span>
@@ -335,6 +352,11 @@ brew install --cask senzalldev/tap/emprise-desktop  # Desktop (macOS)</code></pr
           <h3>Anthropic</h3>
           <p class="provider-type">Cloud / API Key</p>
           <p>Claude Opus, Sonnet, Haiku. Pay-per-token. Excellent for code review and analysis.</p>
+        </div>
+        <div class="provider-card">
+          <h3>Google Gemini</h3>
+          <p class="provider-type">Cloud / API Key</p>
+          <p>First-class Gemini support end to end — OpenAI-compatible base URL, model-name normalization, and full model-picker support. Paste a Google key and emprise recognizes it on sight.</p>
         </div>
         <div class="provider-card">
           <h3>GitHub Models</h3>
