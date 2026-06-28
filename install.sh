@@ -19,7 +19,7 @@ esac
 
 case "$OS" in
   darwin) PLATFORM="darwin-${ARCH}" ;;
-  linux)  PLATFORM="linux-amd64" ;;
+  linux)  PLATFORM="linux-${ARCH}" ;;
   *)      echo "Unsupported OS: $OS"; exit 1 ;;
 esac
 
@@ -62,10 +62,12 @@ fi
 
 chmod +x "$TMPFILE"
 
-# Remove macOS quarantine and ad-hoc sign
+# Clear quarantine. Keep the notarized Developer ID signature when present;
+# only ad-hoc sign if the binary is unsigned (the raw-repo fallback), since
+# an unsigned arm64 binary won't run on Apple Silicon otherwise.
 if [ "$OS" = "darwin" ]; then
   xattr -d com.apple.quarantine "$TMPFILE" 2>/dev/null || true
-  codesign -s - "$TMPFILE" 2>/dev/null || true
+  codesign -v "$TMPFILE" 2>/dev/null || codesign -s - "$TMPFILE" 2>/dev/null || true
 fi
 
 # Install
